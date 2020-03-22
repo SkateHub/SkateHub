@@ -63,4 +63,8 @@
    => Main Feed
  * Map View
    => Main Feed
+   
+ ## 3. Wireframe
+ <img width="944" alt="Screen Shot 2020-03-22 at 11 43 45 AM" src="https://user-images.githubusercontent.com/44143466/77253776-061e4380-6c33-11ea-9139-36a15ff50e67.png">
+
 
