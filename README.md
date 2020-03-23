@@ -81,8 +81,43 @@
    | likesCount    | Number   | number of likes for the post |
    | createdAt     | DateTime | date when post is created (default field) |
    | updatedAt     | DateTime | date when post is last updated (default field) |
+   
 ### Networking
 #### List of network requests by screen
+   - Login Screen
+       - (GET) Login to account
+         ```swift
+         func myMethod() {
+         var user = PFUser()
+         user.username = "myUsername"
+         user.password = "myPassword"
+         user.email = "email@example.com"
+         // other fields can be set just like with PFObject
+         user["phone"] = "415-392-0202"
+
+         user.signUpInBackgroundWithBlock {
+            (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+              let errorString = error.userInfo["error"] as? NSString
+              // Show the errorString somewhere and let the user try again.
+            } else {
+              // Hooray! Let them use the app now.
+            }
+          }
+         }
+         ```
+   - Sign up Screen
+       - (Create) Sign-up a new account
+       ```swift
+         PFUser.logInWithUsernameInBackground("myname", password:"mypass") {
+      (user: PFUser?, error: NSError?) -> Void in
+      if user != nil {
+        // Do stuff after successful login.
+      } else {
+        // The login failed. Check error to see why.
+          }
+     }
+     ```
    - Home Feed Screen
       - (Read/GET) Query all posts where user is author
          ```swift
@@ -102,31 +137,39 @@
       - (Delete) Delete existing like
       - (Create/POST) Create a new comment on a post
       - (Delete) Delete existing comment
+        ```swift
+        PFObject.deleteAll(inBackground: objectArray){(succeeded, error) in
+            if (succeeded) {
+        // The array of objects was successfully deleted.
+            } else {
+        // There was an error. Check the errors localizedDescription.
+            }
+        }
+         ``` 
    - Create Post Screen
       - (Create/POST) Create a new post object
    - Profile Screen
       - (Read/GET) Query logged in user object
       - (Update/PUT) Update user profile image
-#### [OPTIONAL:] Existing API Endpoints
-##### An API Of Ice And Fire
-- Base URL - [http://www.anapioficeandfire.com/api](http://www.anapioficeandfire.com/api)
+         ```swift
+         let query = PFQuery(className:"GameScore")
+         query.getObjectInBackground(withId: "xWMyZEGZ") { (gameScore: 
+         PFObject?, error: Error?) in
+            if let error = error {
+            print(error.localizedDescription)
+            } else if let gameScore = gameScore {
+            // code to change
+            }
+        }
+         ```
+      - (Delete) Delete account
+         ```swift
+        PFObject.deleteAll(inBackground: objectArray){(succeeded, error) in
+            if (succeeded) {
+        // The array of objects was successfully deleted.
+            } else {
+        // There was an error. Check the errors localizedDescription.
+            }
+        }
+         ``` 
 
-   HTTP Verb | Endpoint | Description
-   ----------|----------|------------
-    `GET`    | /characters | get all characters
-    `GET`    | /characters/?name=name | return specific character by name
-    `GET`    | /houses   | get all houses
-    `GET`    | /houses/?name=name | return specific house by name
-
-##### Game of Thrones API
-- Base URL - [https://api.got.show/api](https://api.got.show/api)
-
-   HTTP Verb | Endpoint | Description
-   ----------|----------|------------
-    `GET`    | /cities | gets all cities
-    `GET`    | /cities/byId/:id | gets specific city by :id
-    `GET`    | /continents | gets all continents
-    `GET`    | /continents/byId/:id | gets specific continent by :id
-    `GET`    | /regions | gets all regions
-    `GET`    | /regions/byId/:id | gets specific region by :id
-    `GET`    | /characters/paths/:name | gets a character's path with a given name
