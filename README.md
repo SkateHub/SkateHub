@@ -1,5 +1,18 @@
 
 # Product Spec Design: SkateHub
+## Overview
+### Description
+Allows other skaters to socialize and share their progress.
+
+### App Evaluation
+- **Category:** Social Networking
+- **Mobile:** This app would be optimized for mobile use
+- **Story:** Allows users to connect with each other and view their specific posts. 
+- **Market:** Any one will be able to use the app as much as they want. It is marketed towards skateboarders.
+- **Habit:** This app could be used as often or unoften as the user wanted depending on how deep their skating social life is, and what they're looking for.
+- **Scope:** We allow users to connect with other users. They will be allowed to create posts such as images and have others see them. These posts will be related to skateboarding.
+
+
 
 ## 1. User Stories (Required and Optional)
 
