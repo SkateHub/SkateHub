@@ -15,9 +15,12 @@
 		3A7167F424115FA300B7A304 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167F324115FA300B7A304 /* LogInViewController.swift */; };
 		3A7167F624115FDE00B7A304 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167F524115FDE00B7A304 /* SignUpViewController.swift */; };
 		3A7167F82411602400B7A304 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167F72411602400B7A304 /* FeedViewController.swift */; };
+		D67440257DCAF18DC643DA2D /* Pods_SkateHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkateHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3947B0227D5E81B7EBF15362 /* Pods-SkateHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkateHub.release.xcconfig"; path = "Target Support Files/Pods-SkateHub/Pods-SkateHub.release.xcconfig"; sourceTree = "<group>"; };
 		3A7167DC24115C7200B7A304 /* SkateHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkateHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7167DF24115C7200B7A304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A7167E124115C7200B7A304 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		3A7167F324115FA300B7A304 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		3A7167F524115FDE00B7A304 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3A7167F72411602400B7A304 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		3C2B43926F9D03974317E4F4 /* Pods-SkateHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkateHub.debug.xcconfig"; path = "Target Support Files/Pods-SkateHub/Pods-SkateHub.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D67440257DCAF18DC643DA2D /* Pods_SkateHub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B9441268DD11F7D47344528 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3A7167D324115C7100B7A304 = {
 			isa = PBXGroup;
 			children = (
 				3A7167DE24115C7200B7A304 /* SkateHub */,
 				3A7167DD24115C7200B7A304 /* Products */,
+				6593934AA6DD89A8A76E2BB6 /* Pods */,
+				0B9441268DD11F7D47344528 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,8 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				3A7167DF24115C7200B7A304 /* AppDelegate.swift */,
-				3A7167F72411602400B7A304 /* FeedViewController.swift */,
 				3A7167E124115C7200B7A304 /* SceneDelegate.swift */,
+				3A7167F72411602400B7A304 /* FeedViewController.swift */,
 				3A7167F524115FDE00B7A304 /* SignUpViewController.swift */,
 				3A7167F324115FA300B7A304 /* LogInViewController.swift */,
 				3A7167E524115C7200B7A304 /* Main.storyboard */,
@@ -73,6 +88,16 @@
 			path = SkateHub;
 			sourceTree = "<group>";
 		};
+		6593934AA6DD89A8A76E2BB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C2B43926F9D03974317E4F4 /* Pods-SkateHub.debug.xcconfig */,
+				3947B0227D5E81B7EBF15362 /* Pods-SkateHub.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +105,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A7167F024115C7600B7A304 /* Build configuration list for PBXNativeTarget "SkateHub" */;
 			buildPhases = (
+				8E745CC0FA69AB728A13E57F /* [CP] Check Pods Manifest.lock */,
 				3A7167D824115C7100B7A304 /* Sources */,
 				3A7167D924115C7100B7A304 /* Frameworks */,
 				3A7167DA24115C7100B7A304 /* Resources */,
+				E5EEC216D5080C38BAB60BE2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -138,6 +165,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8E745CC0FA69AB728A13E57F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SkateHub-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5EEC216D5080C38BAB60BE2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkateHub/Pods-SkateHub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SkateHub/Pods-SkateHub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SkateHub/Pods-SkateHub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A7167D824115C7100B7A304 /* Sources */ = {
@@ -290,6 +359,7 @@
 		};
 		3A7167F124115C7600B7A304 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C2B43926F9D03974317E4F4 /* Pods-SkateHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -308,6 +378,7 @@
 		};
 		3A7167F224115C7600B7A304 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3947B0227D5E81B7EBF15362 /* Pods-SkateHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

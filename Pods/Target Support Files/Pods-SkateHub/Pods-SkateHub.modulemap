@@ -1,0 +1,6 @@
+framework module Pods_SkateHub {
+  umbrella header "Pods-SkateHub-umbrella.h"
+
+  export *
+  module * { export * }
+}
