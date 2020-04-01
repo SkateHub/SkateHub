@@ -19,6 +19,7 @@ class SignUpViewController: UIViewController
     
     override func viewDidLoad()
     {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)  
         super.viewDidLoad()
     }
     
@@ -47,6 +48,6 @@ class SignUpViewController: UIViewController
                 }
             }
         }
-        
+        performSegue(withIdentifier: "feed2", sender: nil)
     }
 }

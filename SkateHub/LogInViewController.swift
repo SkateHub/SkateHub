@@ -11,12 +11,16 @@ import UIKit
 class LogInViewController: UIViewController {
 
     override func viewDidLoad() {
+        self.navigationController?.setNavigationBarHidden(true, animated: true)  
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func onLogin(_ sender: Any) {
+        self.performSegue(withIdentifier: "feed", sender: nil)
+    }
     /*
     // MARK: - Navigation
 
