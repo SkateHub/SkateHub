@@ -328,6 +328,9 @@
                                 <state key="normal" title="Edit Profile Image">
                                     <color key="titleColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="onEditImage:" destination="nWF-ko-rei" eventType="touchUpInside" id="ehq-5S-W5e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -414,6 +417,6 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="A2V-FH-ZZg"/>
+        <segue reference="W0n-Dk-juP"/>
     </inferredMetricsTieBreakers>
 </document>

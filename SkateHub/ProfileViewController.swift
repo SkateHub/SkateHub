@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import AlamofireImage
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var bioLabel: UITextView!
@@ -19,14 +19,18 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image=user!["profileImage"] as! PFFileObject
-        let urlString=image.url!
-        let url=URL(string: urlString)!
-        profileImage.af_setImage(withURL: url)
+        updateProfileImage()
         bioLabel.text=user!["bio"] as! String
         
-
-        
+    }
+    
+    func updateProfileImage(){
+        if let user = PFUser.current(){
+            let image=user["profileImage"] as! PFFileObject
+            let urlString=image.url!
+            let url=URL(string: urlString)!
+            profileImage.af_setImage(withURL: url)
+        }
     }
     
     @IBAction func onLogout(_ sender: Any) {
@@ -36,7 +40,27 @@ class ProfileViewController: UIViewController {
         let scene=self.view.window?.windowScene?.delegate  as! SceneDelegate
         scene.window?.rootViewController=login
     }
+    @IBAction func onEditImage(_ sender: Any) {
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        present(picker, animated: true, completion: nil)
+    }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        var currentImage: UIImage!
+        let image = info[.editedImage] as! UIImage
+        currentImage = image
+        
+        if let user = PFUser.current(){
+            let profileData=currentImage.pngData()
+            let imageFile=PFFileObject(name: "profileImage.png", data: profileData!)
+            user["profileImage"]=imageFile
+            user.saveInBackground()
+            dismiss(animated: true, completion: nil)
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
