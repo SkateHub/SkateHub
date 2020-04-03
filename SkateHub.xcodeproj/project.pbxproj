@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		3A7167F424115FA300B7A304 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167F324115FA300B7A304 /* LogInViewController.swift */; };
 		3A7167F624115FDE00B7A304 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167F524115FDE00B7A304 /* SignUpViewController.swift */; };
 		3A7167F82411602400B7A304 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167F72411602400B7A304 /* FeedViewController.swift */; };
+		8D92D70F2436A4C600500DAC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D92D70E2436A4C600500DAC /* ProfileViewController.swift */; };
 		D67440257DCAF18DC643DA2D /* Pods_SkateHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		3A7167F524115FDE00B7A304 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		3A7167F72411602400B7A304 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		3C2B43926F9D03974317E4F4 /* Pods-SkateHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkateHub.debug.xcconfig"; path = "Target Support Files/Pods-SkateHub/Pods-SkateHub.debug.xcconfig"; sourceTree = "<group>"; };
+		8D92D70E2436A4C600500DAC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				3A7167E124115C7200B7A304 /* SceneDelegate.swift */,
 				3A7167F72411602400B7A304 /* FeedViewController.swift */,
 				3A7167F524115FDE00B7A304 /* SignUpViewController.swift */,
+				8D92D70E2436A4C600500DAC /* ProfileViewController.swift */,
 				3A7167F324115FA300B7A304 /* LogInViewController.swift */,
 				3A7167E524115C7200B7A304 /* Main.storyboard */,
 				3A7167E824115C7600B7A304 /* Assets.xcassets */,
@@ -94,7 +97,6 @@
 				3C2B43926F9D03974317E4F4 /* Pods-SkateHub.debug.xcconfig */,
 				3947B0227D5E81B7EBF15362 /* Pods-SkateHub.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -213,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D92D70F2436A4C600500DAC /* ProfileViewController.swift in Sources */,
 				3A7167E024115C7200B7A304 /* AppDelegate.swift in Sources */,
 				3A7167F424115FA300B7A304 /* LogInViewController.swift in Sources */,
 				3A7167F82411602400B7A304 /* FeedViewController.swift in Sources */,

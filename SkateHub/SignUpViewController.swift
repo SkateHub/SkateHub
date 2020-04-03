@@ -40,7 +40,7 @@ class SignUpViewController: UIViewController
             user.signUpInBackground { (success, error) in
                 if success
                 {
-                    self.performSegue(withIdentifier: "feedSegue", sender: nil)
+                    self.performSegue(withIdentifier: "signupDone", sender: nil)
                 }
                 else
                 {
@@ -48,6 +48,6 @@ class SignUpViewController: UIViewController
                 }
             }
         }
-        performSegue(withIdentifier: "feed2", sender: nil)
+
     }
 }
