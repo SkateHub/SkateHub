@@ -45,7 +45,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GVn-kw-q4M"/>
-                                    <segue destination="FXO-MM-42J" kind="presentation" identifier="loginDone" id="2w5-OZ-mH8"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------- or -------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtW-BF-cVu">
@@ -64,7 +63,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yqv-gX-MwU" kind="presentation" identifier="loginSegue" id="aUP-er-xj5"/>
+                                    <segue destination="k6f-MO-y8i" kind="presentation" id="XRY-lz-qrh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -95,11 +94,12 @@
                     <connections>
                         <outlet property="passwordField" destination="hpC-bK-eqP" id="7PL-mK-ZML"/>
                         <outlet property="usernameField" destination="vT7-BS-B7q" id="M7f-Jh-f4t"/>
+                        <segue destination="FXO-MM-42J" kind="presentation" identifier="loginDone" id="A2V-FH-ZZg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="74"/>
+            <point key="canvasLocation" x="896" y="74"/>
         </scene>
         <!--Sign Up-->
         <scene sceneID="aIT-Nf-Vtd">
@@ -164,7 +164,6 @@
                                 </state>
                                 <connections>
                                     <action selector="onSignUp:" destination="k6f-MO-y8i" eventType="touchUpInside" id="Sdy-tO-JKx"/>
-                                    <segue destination="FXO-MM-42J" kind="presentation" identifier="signupDone" id="2Y4-Wd-fov"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -206,11 +205,12 @@
                         <outlet property="lastNameField" destination="TLF-rc-3kE" id="iD2-TM-foJ"/>
                         <outlet property="passwordField" destination="7l5-f4-Amj" id="SvU-a3-rWs"/>
                         <outlet property="usernameField" destination="lfp-AQ-whs" id="kSA-di-nSh"/>
+                        <segue destination="FXO-MM-42J" kind="presentation" identifier="signupDone" id="W0n-Dk-juP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSe-aq-LkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2629" y="74"/>
+            <point key="canvasLocation" x="1812" y="84"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="f60-iy-tZi">
@@ -394,31 +394,12 @@
             </objects>
             <point key="canvasLocation" x="1791" y="850"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Azl-t7-aTG">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="yqv-gX-MwU" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="uve-UR-sBc"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fZj-UZ-f8N">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="k6f-MO-y8i" kind="relationship" relationship="rootViewController" id="rVJ-R6-XDL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yv4-hD-wDk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1790" y="74"/>
-        </scene>
     </scenes>
     <resources>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2w5-OZ-mH8"/>
+        <segue reference="A2V-FH-ZZg"/>
     </inferredMetricsTieBreakers>
 </document>
