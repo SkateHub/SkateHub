@@ -8,13 +8,25 @@
 
 import UIKit
 import Parse
+import AlamofireImage
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var bioLabel: UITextView!
+    var user = PFUser.current()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let image=user!["profileImage"] as! PFFileObject
+        let urlString=image.url!
+        let url=URL(string: urlString)!
+        profileImage.af_setImage(withURL: url)
+        bioLabel.text=user!["bio"] as! String
+        
 
-        // Do any additional setup after loading the view.
+        
     }
     
     @IBAction func onLogout(_ sender: Any) {

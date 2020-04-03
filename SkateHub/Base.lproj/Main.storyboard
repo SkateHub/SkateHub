@@ -254,14 +254,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="OT2-Sy-5cR">
-                        <barButtonItem key="leftBarButtonItem" image="profile_tab" id="C3j-iR-5if">
-                            <connections>
-                                <segue destination="nWF-ko-rei" kind="show" id="q5d-O8-uI0"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="camera" image="insta_camera_btn" id="t0Z-8v-Ov2">
+                        <barButtonItem key="leftBarButtonItem" title="camera" image="insta_camera_btn" id="t0Z-8v-Ov2">
                             <connections>
                                 <segue destination="tnI-P0-jo4" kind="show" id="6eg-bO-zT1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="profile_tab" id="C3j-iR-5if">
+                            <connections>
+                                <segue destination="nWF-ko-rei" kind="show" id="q5d-O8-uI0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -278,11 +278,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Profile text editing...." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zYW-mo-y1O">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Edit bio..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zYW-mo-y1O">
                                 <rect key="frame" x="31" y="451" width="353" height="188"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.93206694162436543" green="0.93206694162436543" blue="0.93206694162436543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" red="0.99732631439999997" green="0.5154384971" blue="0.43918663260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -294,40 +294,54 @@
                                 <rect key="frame" x="31" y="422" width="28" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.9973263144493103" green="0.5154384970664978" blue="0.43918663263320923" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y3g-qM-kNj">
                                 <rect key="frame" x="127" y="645" width="166" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9973263144493103" green="0.5154384970664978" blue="0.43918663263320923" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Delete Account"/>
+                                <color key="tintColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Delete Account">
+                                    <color key="titleColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEe-FF-q0M">
                                 <rect key="frame" x="174" y="713" width="82" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.9973263144493103" green="0.5154384970664978" blue="0.43918663263320923" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Log out"/>
+                                <color key="tintColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="onLogout:" destination="nWF-ko-rei" eventType="touchUpInside" id="ECr-Gv-B2H"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change profile picture" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7hr-rU-jif">
-                                <rect key="frame" x="122" y="355" width="170" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OpZ-i3-uy6">
+                                <rect key="frame" x="138" y="355" width="120" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="0.99732631439999997" green="0.5154384971" blue="0.43918663260000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Edit Profile Image">
+                                    <color key="titleColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="HbY-G3-Qkf"/>
                     </view>
                     <navigationItem key="navigationItem" id="Isu-v2-1w6"/>
+                    <connections>
+                        <outlet property="bioLabel" destination="zYW-mo-y1O" id="dfU-oy-ESr"/>
+                        <outlet property="profileImage" destination="qOx-Sa-4pd" id="yzI-wC-5NE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONE-QO-Y4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3767" y="505"/>
+            <point key="canvasLocation" x="3766.666666666667" y="504.91071428571428"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3oF-d7-7R9">
