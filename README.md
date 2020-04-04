@@ -18,10 +18,10 @@ Allows other skaters to socialize and share their progress.
 
 **Required Must-have Stories**
 
- * User can login using a LogIn Page
- * User can create an account using a SignUp Page
- * User can stay logged in
- * User can log out
+ [X] User can login using a LogIn Page
+ [X] User can create an account using a SignUp Page
+ [X] User can stay logged in
+ [X] User can log out
  * User can view a feed of photos/posts
  * User can create a photo/post
  * User can comment/like a post
