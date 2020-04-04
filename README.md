@@ -18,21 +18,21 @@ Allows other skaters to socialize and share their progress.
 
 **Required Must-have Stories**
 
- [X] User can login using a LogIn Page
- [X] User can create an account using a SignUp Page
- [X] User can stay logged in
- [X] User can log out
- * User can view a feed of photos/posts
- * User can create a photo/post
- * User can comment/like a post
+ - [X] User can login using a LogIn Page
+ - [X] User can create an account using a SignUp Page
+ - [X] User can stay logged in
+ - [X] User can log out
+ - [] User can view a feed of photos/posts
+ - [] User can create a photo/post
+ - [] User can comment/like a post
 
 **Optional Nice-to-have Stories**
 
- * User can pin skate spots on a map
- * User can edit their profile
- * User can follow/unfollow users
- * User can see a tab of whom they follow
- * User will get notifications when their photo is commented or liked
+ - [] User can pin skate spots on a map
+ - [] User can edit their profile
+ - [] User can follow/unfollow users
+ - [] User can see a tab of whom they follow
+ - [] User will get notifications when their photo is commented or liked
  
 
 ## 2. Screen Archetypes
