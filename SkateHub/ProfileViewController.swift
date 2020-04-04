@@ -14,20 +14,18 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var bioLabel: UITextView!
-    var user = PFUser.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         updateProfileImage()
-        bioLabel.text=user!["bio"] as! String
+        bioLabel.text=PFUser.current()!["bio"] as! String
         
     }
     
     func updateProfileImage(){
         if let user = PFUser.current(){
             let image=user["profileImage"] as! PFFileObject
-            let urlString=image.url!
+            guard let urlString=image.url else { return }
             let url=URL(string: urlString)!
             profileImage.af_setImage(withURL: url)
         }
@@ -58,8 +56,23 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             user["profileImage"]=imageFile
             user.saveInBackground()
             dismiss(animated: true, completion: nil)
+            let alert=UIAlertController(title: "Profile Image Updated", message: "Exit and press profile again to see changes!", preferredStyle: UIAlertController.Style.alert)
+            let alertAction=alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
         }
-        
+    }
+    @IBAction func onUpdateBio(_ sender: Any) {
+        if(bioLabel.text.count < 30){
+            if let user=PFUser.current(){
+                user["bio"] = bioLabel.text
+                user.saveInBackground()
+            }
+        } else{
+            let alert=UIAlertController(title: "Shorten bio", message: "Bio must be less than 30 characters!", preferredStyle: UIAlertController.Style.alert)
+            let alertAction=alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     /*
     // MARK: - Navigation
