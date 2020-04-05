@@ -186,4 +186,5 @@ Allows other skaters to socialize and share their progress.
             }
         }
          ``` 
-
+## Demo of current progress
+![HUBO](https://user-images.githubusercontent.com/44143466/78502052-03d8e080-772d-11ea-9edc-89292c7fd561.gif)
