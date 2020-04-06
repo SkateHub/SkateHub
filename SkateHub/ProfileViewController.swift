@@ -92,20 +92,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 let profileData=currentImage.pngData()
                 let imageFile=PFFileObject(name: "profileImage.png", data: profileData!)
                 user["profileImage"]=imageFile
-                user.saveInBackground()
+                user.saveInBackground(block: { (success, error) in
+                    if success {
+                        self.updateProfileImage()
+                    }
+                })
                 dismiss(animated: true, completion: nil)
-                let alert=UIAlertController(title: "Profile Image Updated", message: "Go back and press profile again to see changes!", preferredStyle: UIAlertController.Style.alert)
-                let alertAction=alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
             } else{
                 let profileData=currentImage.pngData()
                 let imageFile=PFFileObject(name: "bg.png", data: profileData!)
                 user["bgImage"]=imageFile
-                user.saveInBackground()
+                user.saveInBackground(block: { (success, error) in
+                    if success {
+                        self.updateBgImage()
+                    }
+                })
                 dismiss(animated: true, completion: nil)
-                let alert=UIAlertController(title: "Background Updated", message: "Go back and press profile again to see changes!", preferredStyle: UIAlertController.Style.alert)
-                let alertAction=alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -114,6 +116,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             if let user=PFUser.current(){
                 user["bio"] = bioLabel.text
                 user.saveInBackground()
+                let alert=UIAlertController(title: "Bio updated", message: "Your bio has been updated!", preferredStyle: UIAlertController.Style.alert)
+                let alertAction=alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         } else{
             let alert=UIAlertController(title: "Shorten bio", message: "Bio must be less than 30 characters!", preferredStyle: UIAlertController.Style.alert)
