@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -215,7 +215,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="f60-iy-tZi">
             <objects>
-                <tabBarController modalPresentationStyle="fullScreen" id="FXO-MM-42J" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="FeedNavigationController" modalPresentationStyle="fullScreen" id="FXO-MM-42J" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a0H-cc-Hxd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -230,6 +230,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wup-3z-Yil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1109" y="789"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="ADo-NZ-CMS">
+            <objects>
+                <viewController id="4xw-wh-1nP" customClass="MapViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8uL-LE-JyG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nNv-pK-nsb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6tK-hB-kfS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CuB-p1-Gjf"/>
+                    <connections>
+                        <outlet property="mapView" destination="nNv-pK-nsb" id="WYP-Y9-rwm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aj0-Ns-KZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.79710144927537" y="2266.0714285714284"/>
         </scene>
         <!--Feed Table View Controller-->
         <scene sceneID="1am-9P-hSv">
@@ -499,32 +524,17 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="kTx-9h-hCX" kind="presentation" id="4KN-We-Tdy"/>
+                        <segue destination="4xw-wh-1nP" kind="relationship" relationship="rootViewController" id="6DE-xI-EE5"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xO-cw-f7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="206" y="1497"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="FGd-uJ-M4I">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="kTx-9h-hCX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VPc-MT-TPn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="pSp-CT-Xyr"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="833-BB-GAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="206" y="2198"/>
-        </scene>
         <!--Feed-->
         <scene sceneID="S22-Gd-fNR">
             <objects>
-                <navigationController storyboardIdentifier="FeedNavigationController" id="piD-Tn-QZK" sceneMemberID="viewController">
+                <navigationController id="piD-Tn-QZK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" id="6o5-gj-t0m"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JL6-3d-4x7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -560,15 +570,15 @@
             <point key="canvasLocation" x="1888" y="1529"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera.fill" catalog="system" width="64" height="48"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
+        <image name="profile_tab" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="W0n-Dk-juP"/>
     </inferredMetricsTieBreakers>
-    <resources>
-        <image name="camera.fill" catalog="system" width="128" height="96"/>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="insta_camera_btn" width="25" height="25"/>
-        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
-        <image name="plus.circle" catalog="system" width="128" height="121"/>
-        <image name="profile_tab" width="25" height="25"/>
-    </resources>
 </document>
