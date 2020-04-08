@@ -12,7 +12,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var captionLabel: UILabel!
     
 
     override func awakeFromNib() {
