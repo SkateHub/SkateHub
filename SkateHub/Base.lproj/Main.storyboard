@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -224,11 +224,12 @@
                     <connections>
                         <segue destination="piD-Tn-QZK" kind="relationship" relationship="viewControllers" id="SAg-bY-CSc"/>
                         <segue destination="TSI-HW-U6s" kind="relationship" relationship="viewControllers" id="7zc-hM-G0C"/>
+                        <segue destination="d22-wj-cjS" kind="relationship" relationship="viewControllers" id="As6-GT-fSX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wup-3z-Yil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925" y="850"/>
+            <point key="canvasLocation" x="1109" y="789"/>
         </scene>
         <!--Feed Table View Controller-->
         <scene sceneID="1am-9P-hSv">
@@ -299,7 +300,8 @@
                                 <segue destination="tnI-P0-jo4" kind="show" id="6eg-bO-zT1"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="profile_tab" id="C3j-iR-5if">
+                        <barButtonItem key="rightBarButtonItem" image="line.horizontal.3" catalog="system" id="C3j-iR-5if">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="nWF-ko-rei" kind="show" id="q5d-O8-uI0"/>
                             </connections>
@@ -308,7 +310,23 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BQl-1U-krH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657.971014492754" y="849.77678571428567"/>
+            <point key="canvasLocation" x="1109" y="2267"/>
+        </scene>
+        <!--Profile Feed View Controller-->
+        <scene sceneID="m9e-nQ-tJj">
+            <objects>
+                <viewController id="wGK-PB-APY" customClass="ProfileFeedViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wRv-Zt-ctm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Mmm-zk-nSf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pjQ-IR-dVM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vDV-l5-OWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="2267"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="hjl-cG-74A">
@@ -421,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONE-QO-Y4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766.666666666667" y="504.91071428571428"/>
+            <point key="canvasLocation" x="1254" y="2997"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3oF-d7-7R9">
@@ -469,7 +487,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Q3-2G-13O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766.666666666667" y="1158.4821428571429"/>
+            <point key="canvasLocation" x="606" y="2997"/>
         </scene>
         <!--Spots-->
         <scene sceneID="tXa-qi-u3d">
@@ -486,7 +504,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3xO-cw-f7E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1009" y="1723"/>
+            <point key="canvasLocation" x="206" y="1497"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="FGd-uJ-M4I">
@@ -501,13 +519,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="833-BB-GAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="1723"/>
+            <point key="canvasLocation" x="206" y="2198"/>
         </scene>
         <!--Feed-->
         <scene sceneID="S22-Gd-fNR">
             <objects>
                 <navigationController storyboardIdentifier="FeedNavigationController" id="piD-Tn-QZK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="6o5-gj-t0m"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="house" catalog="system" id="6o5-gj-t0m"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="JL6-3d-4x7">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -518,16 +536,39 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ecU-vy-wkd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="850"/>
+            <point key="canvasLocation" x="1109" y="1530"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="c78-hX-RCW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d22-wj-cjS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" id="WfL-eg-UaK">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Opb-1k-1fg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wGK-PB-APY" kind="relationship" relationship="rootViewController" id="5qK-as-ja0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uK1-7I-Wo5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1888" y="1529"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="insta_camera_btn" width="25" height="25"/>
-        <image name="plus.circle" catalog="system" width="64" height="60"/>
-        <image name="profile_tab" width="25" height="25"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="W0n-Dk-juP"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="profile_tab" width="25" height="25"/>
+    </resources>
 </document>

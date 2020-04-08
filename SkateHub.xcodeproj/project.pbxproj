@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A41A750243E445200908DA4 /* ProfileFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41A74F243E445200908DA4 /* ProfileFeedViewController.swift */; };
 		3A7167E024115C7200B7A304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167DF24115C7200B7A304 /* AppDelegate.swift */; };
 		3A7167E224115C7200B7A304 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167E124115C7200B7A304 /* SceneDelegate.swift */; };
 		3A7167E724115C7200B7A304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A7167E524115C7200B7A304 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkateHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3947B0227D5E81B7EBF15362 /* Pods-SkateHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkateHub.release.xcconfig"; path = "Target Support Files/Pods-SkateHub/Pods-SkateHub.release.xcconfig"; sourceTree = "<group>"; };
+		3A41A74F243E445200908DA4 /* ProfileFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFeedViewController.swift; sourceTree = "<group>"; };
 		3A7167DC24115C7200B7A304 /* SkateHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkateHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A7167DF24115C7200B7A304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A7167E124115C7200B7A304 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3A41A751243E468D00908DA4 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				8DD534F42437E70F00BDA4CB /* FeedTableViewController.swift */,
+				8D92D70E2436A4C600500DAC /* ProfileViewController.swift */,
+				8DD534F62437E73400BDA4CB /* PostCell.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		3A41A752243E46BF00908DA4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3A41A74F243E445200908DA4 /* ProfileFeedViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		3A7167D324115C7100B7A304 = {
 			isa = PBXGroup;
 			children = (
@@ -79,14 +99,13 @@
 		3A7167DE24115C7200B7A304 /* SkateHub */ = {
 			isa = PBXGroup;
 			children = (
+				3A41A752243E46BF00908DA4 /* Profile */,
+				3A41A751243E468D00908DA4 /* Feed */,
 				3A7167DF24115C7200B7A304 /* AppDelegate.swift */,
 				3A7167E124115C7200B7A304 /* SceneDelegate.swift */,
 				3A7167F524115FDE00B7A304 /* SignUpViewController.swift */,
-				8D92D70E2436A4C600500DAC /* ProfileViewController.swift */,
 				3A7167F324115FA300B7A304 /* LogInViewController.swift */,
 				3A7167E524115C7200B7A304 /* Main.storyboard */,
-				8DD534F62437E73400BDA4CB /* PostCell.swift */,
-				8DD534F42437E70F00BDA4CB /* FeedTableViewController.swift */,
 				3A7167E824115C7600B7A304 /* Assets.xcassets */,
 				3A7167EA24115C7600B7A304 /* LaunchScreen.storyboard */,
 				3A7167ED24115C7600B7A304 /* Info.plist */,
@@ -224,6 +243,7 @@
 				3A7167E024115C7200B7A304 /* AppDelegate.swift in Sources */,
 				3A7167F424115FA300B7A304 /* LogInViewController.swift in Sources */,
 				3A7167F624115FDE00B7A304 /* SignUpViewController.swift in Sources */,
+				3A41A750243E445200908DA4 /* ProfileFeedViewController.swift in Sources */,
 				3A7167E224115C7200B7A304 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
