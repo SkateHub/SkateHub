@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37284DF2243E584500B4F225 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37284DF1243E584500B4F225 /* MapViewController.swift */; };
 		3A41A750243E445200908DA4 /* ProfileFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41A74F243E445200908DA4 /* ProfileFeedViewController.swift */; };
 		3A7167E024115C7200B7A304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167DF24115C7200B7A304 /* AppDelegate.swift */; };
 		3A7167E224115C7200B7A304 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167E124115C7200B7A304 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37284DF1243E584500B4F225 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkateHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3947B0227D5E81B7EBF15362 /* Pods-SkateHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkateHub.release.xcconfig"; path = "Target Support Files/Pods-SkateHub/Pods-SkateHub.release.xcconfig"; sourceTree = "<group>"; };
 		3A41A74F243E445200908DA4 /* ProfileFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFeedViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				3A41A752243E46BF00908DA4 /* Profile Tab */,
 				3A41A751243E468D00908DA4 /* Feed Tab */,
 				3A7167F524115FDE00B7A304 /* SignUpViewController.swift */,
+				37284DF1243E584500B4F225 /* MapViewController.swift */,
 				3A7167F324115FA300B7A304 /* LogInViewController.swift */,
 				3A7167E524115C7200B7A304 /* Main.storyboard */,
 				3A7167EA24115C7600B7A304 /* LaunchScreen.storyboard */,
@@ -241,6 +244,7 @@
 				8D92D70F2436A4C600500DAC /* ProfileViewController.swift in Sources */,
 				8DD534F52437E70F00BDA4CB /* FeedTableViewController.swift in Sources */,
 				3A7167E024115C7200B7A304 /* AppDelegate.swift in Sources */,
+				37284DF2243E584500B4F225 /* MapViewController.swift in Sources */,
 				3A7167F424115FA300B7A304 /* LogInViewController.swift in Sources */,
 				3A7167F624115FDE00B7A304 /* SignUpViewController.swift in Sources */,
 				3A41A750243E445200908DA4 /* ProfileFeedViewController.swift in Sources */,
@@ -390,7 +394,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J8P66L5C27;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SkateHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -409,7 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J8P66L5C27;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SkateHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
