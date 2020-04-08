@@ -60,22 +60,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3A41A751243E468D00908DA4 /* Feed */ = {
+		3A41A751243E468D00908DA4 /* Feed Tab */ = {
 			isa = PBXGroup;
 			children = (
 				8DD534F42437E70F00BDA4CB /* FeedTableViewController.swift */,
 				8D92D70E2436A4C600500DAC /* ProfileViewController.swift */,
 				8DD534F62437E73400BDA4CB /* PostCell.swift */,
 			);
-			path = Feed;
+			path = "Feed Tab";
 			sourceTree = "<group>";
 		};
-		3A41A752243E46BF00908DA4 /* Profile */ = {
+		3A41A752243E46BF00908DA4 /* Profile Tab */ = {
 			isa = PBXGroup;
 			children = (
 				3A41A74F243E445200908DA4 /* ProfileFeedViewController.swift */,
 			);
-			path = Profile;
+			path = "Profile Tab";
 			sourceTree = "<group>";
 		};
 		3A7167D324115C7100B7A304 = {
@@ -99,15 +99,15 @@
 		3A7167DE24115C7200B7A304 /* SkateHub */ = {
 			isa = PBXGroup;
 			children = (
-				3A41A752243E46BF00908DA4 /* Profile */,
-				3A41A751243E468D00908DA4 /* Feed */,
 				3A7167DF24115C7200B7A304 /* AppDelegate.swift */,
 				3A7167E124115C7200B7A304 /* SceneDelegate.swift */,
+				3A41A752243E46BF00908DA4 /* Profile Tab */,
+				3A41A751243E468D00908DA4 /* Feed Tab */,
 				3A7167F524115FDE00B7A304 /* SignUpViewController.swift */,
 				3A7167F324115FA300B7A304 /* LogInViewController.swift */,
 				3A7167E524115C7200B7A304 /* Main.storyboard */,
-				3A7167E824115C7600B7A304 /* Assets.xcassets */,
 				3A7167EA24115C7600B7A304 /* LaunchScreen.storyboard */,
+				3A7167E824115C7600B7A304 /* Assets.xcassets */,
 				3A7167ED24115C7600B7A304 /* Info.plist */,
 			);
 			path = SkateHub;
