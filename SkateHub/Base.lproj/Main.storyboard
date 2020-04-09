@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -344,10 +344,10 @@
                                 <rect key="frame" x="20" y="202" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olI-Q0-2uL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olI-Q0-2uL">
                                 <rect key="frame" x="158" y="276" width="236" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -391,6 +391,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="pjQ-IR-dVM"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="K9v-wQ-MyE" id="9GO-yI-8ln"/>
+                        <outlet property="bioLabel" destination="fts-iJ-usm" id="ssd-64-9UY"/>
+                        <outlet property="nameOfUserLabel" destination="olI-Q0-2uL" id="DzI-Oo-5I5"/>
+                        <outlet property="profilePictureImageView" destination="tCZ-Nr-RAQ" id="2kk-6F-Wke"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDV-l5-OWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -645,16 +651,16 @@
             <point key="canvasLocation" x="1888" y="1529"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="insta_camera_btn" width="25" height="25"/>
-        <image name="line.horizontal.3" catalog="system" width="64" height="32"/>
-        <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
-        <image name="plus.circle" catalog="system" width="64" height="60"/>
-        <image name="profile_tab" width="25" height="25"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="A2V-FH-ZZg"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="line.horizontal.3" catalog="system" width="128" height="64"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="profile_tab" width="25" height="25"/>
+    </resources>
 </document>

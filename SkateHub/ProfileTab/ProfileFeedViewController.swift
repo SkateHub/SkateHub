@@ -7,24 +7,41 @@
 //
 
 import UIKit
+import AlamofireImage
+import Parse
 
-class ProfileFeedViewController: UIViewController {
+class ProfileFeedViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    @IBOutlet weak var nameOfUserLabel: UILabel!
+    @IBOutlet weak var bioLabel: UILabel!
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let user = PFUser.current()
+        {
+            //Set the profile pic
+            let profileImage = user["profileImage"] as! PFFileObject
+            guard  let urlString  =  profileImage.url else { return}
+            let url = URL(string: urlString)!
+            profilePictureImageView.af_setImage(withURL: url)
+            
+            //Set the bio
+            bioLabel.text = user["bio"] as? String
+            
+            //Set  the  user's name
+            let userFirstName = user["FirstName"] as! String
+            let userLastName = user["LastName"] as! String
+            nameOfUserLabel.text = "\(userFirstName) \(userLastName)"
+        }
+        reloadInputViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 
 }
