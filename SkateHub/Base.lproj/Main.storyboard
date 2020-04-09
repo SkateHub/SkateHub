@@ -266,46 +266,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.9951923077" green="0.9903846154" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="555" id="y8d-6i-bgp" customClass="PostCell" customModule="SkateHub" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="555" id="y8d-6i-bgp" customClass="PostCell" customModule="SkateHub" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="555"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y8d-6i-bgp" id="OxP-7a-rhd">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="555"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1H-p6-b2Y">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1H-p6-b2Y">
                                             <rect key="frame" x="20" y="11" width="46" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3oP-M6-MUG">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3oP-M6-MUG">
                                             <rect key="frame" x="20" y="79" width="374" height="387"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj1-fe-5WU">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj1-fe-5WU">
                                             <rect key="frame" x="74" y="19" width="82" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-xd-Jmm">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-xd-Jmm">
                                             <rect key="frame" x="20" y="512" width="60" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="FqX-xd-Jmm" firstAttribute="leading" secondItem="OxP-7a-rhd" secondAttribute="leadingMargin" id="2b8-Ke-mgy"/>
-                                        <constraint firstItem="Mj1-fe-5WU" firstAttribute="leading" secondItem="s1H-p6-b2Y" secondAttribute="trailing" constant="8" id="3c5-8f-LIe"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="FqX-xd-Jmm" secondAttribute="trailing" constant="314" id="HcX-Fw-67O"/>
-                                        <constraint firstItem="Mj1-fe-5WU" firstAttribute="leading" secondItem="s1H-p6-b2Y" secondAttribute="trailing" constant="8" id="Pmp-yF-JPw"/>
-                                        <constraint firstItem="s1H-p6-b2Y" firstAttribute="leading" secondItem="OxP-7a-rhd" secondAttribute="leadingMargin" id="WPS-b4-cK1"/>
-                                        <constraint firstItem="FqX-xd-Jmm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="3oP-M6-MUG" secondAttribute="bottom" constant="48" id="gCi-z8-zY6"/>
-                                        <constraint firstItem="Mj1-fe-5WU" firstAttribute="top" secondItem="OxP-7a-rhd" secondAttribute="topMargin" constant="8" id="i7S-oU-tg4"/>
-                                        <constraint firstItem="3oP-M6-MUG" firstAttribute="leading" secondItem="OxP-7a-rhd" secondAttribute="leadingMargin" id="l15-8S-ZzS"/>
-                                        <constraint firstItem="3oP-M6-MUG" firstAttribute="trailing" secondItem="OxP-7a-rhd" secondAttribute="trailingMargin" id="oBW-0n-AXs"/>
-                                        <constraint firstItem="3oP-M6-MUG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="s1H-p6-b2Y" secondAttribute="bottom" constant="16" id="vBV-07-reM"/>
-                                        <constraint firstItem="s1H-p6-b2Y" firstAttribute="top" secondItem="OxP-7a-rhd" secondAttribute="topMargin" id="vXH-51-xAl"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Mj1-fe-5WU" secondAttribute="trailing" constant="238" id="weC-Gn-BXf"/>
-                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="captionLabel" destination="FqX-xd-Jmm" id="UDR-dN-qOg"/>
