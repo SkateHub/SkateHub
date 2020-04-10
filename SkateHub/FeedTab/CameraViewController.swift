@@ -13,7 +13,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var captionField: UITextView!
-    
+    @IBOutlet weak var postBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,17 +30,20 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         post["image"] = file
         
-        post.saveInBackground { (success, error) in
+        post.saveInBackground(block: { (success, error) in
+            self.postBtn.isEnabled=false
             if success{
-                self.dismiss(animated: true, completion: nil)
+                self.postBtn.isEnabled=true
+                //self.dismiss(animated: true, completion: nil)
                 print("Saved!")
+                self.performSegue(withIdentifier: "Done", sender: nil)
             }else{
+                self.postBtn.isEnabled=true
                 print("Error!")
             }
+
             
-            
-            
-        }
+        })
         
     }
     
