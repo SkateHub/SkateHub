@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -500,7 +500,7 @@
                         <outlet property="captionLabel" destination="E6b-Ev-81M" id="vQg-Md-7Pt"/>
                         <outlet property="imageView" destination="0j9-RH-erD" id="c43-lU-sIK"/>
                         <outlet property="postBtn" destination="5Le-gM-NM9" id="bjd-p4-z3a"/>
-                        <segue destination="kTx-9h-hCX" kind="presentation" identifier="Done" id="myQ-Zx-8Il"/>
+                        <segue destination="FXO-MM-42J" kind="presentation" identifier="isUp" id="HaU-VZ-133"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Q3-2G-13O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -550,26 +550,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="3oP-M6-MUG">
-                                                    <rect key="frame" x="16" y="62" width="374" height="387"/>
+                                                    <rect key="frame" x="20" y="62" width="374" height="387"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="387" id="7sy-mF-guD"/>
                                                         <constraint firstAttribute="width" constant="374" id="E5c-76-rpj"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="NFe-qW-DFs"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s1H-p6-b2Y">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s1H-p6-b2Y">
                                                     <rect key="frame" x="20" y="2" width="46" height="52"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="46" id="eay-Nf-0lD"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj1-fe-5WU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mj1-fe-5WU">
                                                     <rect key="frame" x="74" y="11" width="82" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-xd-Jmm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqX-xd-Jmm">
                                                     <rect key="frame" x="20" y="468" width="60" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="chO-kX-rSy"/>
@@ -669,16 +669,15 @@
             <point key="canvasLocation" x="1109" y="1529"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="HaU-VZ-133"/>
+    </inferredMetricsTieBreakers>
     <resources>
-        <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="doc.plaintext" catalog="system" width="56" height="64"/>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="insta_camera_btn" width="25" height="25"/>
-        <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
-        <image name="plus.circle" catalog="system" width="64" height="60"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="profile_tab" width="25" height="25"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="myQ-Zx-8Il"/>
-        <segue reference="A2V-FH-ZZg"/>
-    </inferredMetricsTieBreakers>
 </document>

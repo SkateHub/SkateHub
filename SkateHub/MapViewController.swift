@@ -11,12 +11,12 @@ import MapKit
 
 class MapViewController: UIViewController {
 
-    
     @IBOutlet weak var mapView: MKMapView!
     let mapManager=CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.mapType = .hybrid
         serviceCheck()
         // Do any additional setup after loading the view.
     }
@@ -33,6 +33,12 @@ class MapViewController: UIViewController {
     func checkAuthorization(){
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
+            let lat=mapManager.location?.coordinate.latitude
+            let long=mapManager.location?.coordinate.longitude
+            let location=CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+            let span=MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let region=MKCoordinateRegion(center: location, span: span)
+            mapView.setRegion(region, animated: true)
             mapView.showsUserLocation=true
         case .denied:
             break

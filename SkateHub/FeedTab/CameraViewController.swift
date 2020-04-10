@@ -20,6 +20,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     @IBAction func onPostButton(_ sender: Any) {
+        self.postBtn.isEnabled=false
         let post = PFObject(className: "Posts")
         
         post["caption"] = captionField.text!
@@ -31,12 +32,11 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         post["image"] = file
         
         post.saveInBackground(block: { (success, error) in
-            self.postBtn.isEnabled=false
             if success{
-                self.postBtn.isEnabled=true
                 //self.dismiss(animated: true, completion: nil)
                 print("Saved!")
-                self.performSegue(withIdentifier: "Done", sender: nil)
+                self.postBtn.isEnabled=true
+                self.performSegue(withIdentifier: "isUp", sender: nil)
             }else{
                 self.postBtn.isEnabled=true
                 print("Error!")

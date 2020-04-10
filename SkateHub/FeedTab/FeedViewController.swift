@@ -57,15 +57,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let imageFile = post["image"] as! PFFileObject
         let urlString = imageFile.url!
         let url = URL(string: urlString)!
-        
-        if let user = PFUser.current(){
-            let image=user["profileImage"] as! PFFileObject
-            let urlString2=image.url
-            let url2=URL(string: urlString2!)!
-
-            cell.profilePicture.af_setImage(withURL: url2)
-        }
         cell.postImage.af_setImage(withURL: url)
+        
         return cell
         
         
