@@ -621,6 +621,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="profileImg" destination="PdS-De-k9q" id="0tQ-27-ReY"/>
                         <outlet property="tableView" destination="OId-X9-kdt" id="hhf-Ff-ZWi"/>
                     </connections>
                 </viewController>
@@ -670,6 +671,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="CnZ-b4-h4N"/>
         <segue reference="HaU-VZ-133"/>
     </inferredMetricsTieBreakers>
     <resources>

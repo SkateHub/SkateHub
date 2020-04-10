@@ -30,11 +30,6 @@ class ProfileFeedViewController: UIViewController
             let url = URL(string: urlString)!
             profilePictureImageView.af_setImage(withURL: url)
             
-            let profileImage2 = user["bgImage"] as! PFFileObject
-            guard  let urlString2  =  profileImage2.url else { return}
-            let url2 = URL(string: urlString2)!
-            backgroundImageView.af_setImage(withURL: url2)
-            
             //Set the bio
             bioLabel.text = user["bio"] as? String
             

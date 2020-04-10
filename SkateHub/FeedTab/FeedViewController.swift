@@ -13,6 +13,7 @@ import AlamofireImage
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var profileImg: UIBarButtonItem!
     var posts = [PFObject]()
     
     override func viewDidLoad(){
