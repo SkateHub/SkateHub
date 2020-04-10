@@ -22,7 +22,7 @@ Allows other skaters to socialize and share their progress.
  - [x] User can create an account using a SignUp Page
  - [x] User can stay logged in
  - [x] User can log out
- - [ ] User can view a feed of photos/posts
+ - [X] User can view a feed of photos/posts
  - [X] User can create a photo/post
  - [ ] User can comment/like a post
  
