@@ -68,6 +68,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3784EA66244121630013E099 /* MapTab */ = {
+			isa = PBXGroup;
+			children = (
+				37284DF1243E584500B4F225 /* MapViewController.swift */,
+			);
+			path = MapTab;
+			sourceTree = "<group>";
+		};
 		3A41A751243E468D00908DA4 /* FeedTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,9 +120,9 @@
 				3A7167E124115C7200B7A304 /* SceneDelegate.swift */,
 				3A41A752243E46BF00908DA4 /* ProfileTab */,
 				3A41A751243E468D00908DA4 /* FeedTab */,
+				3784EA66244121630013E099 /* MapTab */,
 				3A7167F324115FA300B7A304 /* LogInViewController.swift */,
 				3A7167F524115FDE00B7A304 /* SignUpViewController.swift */,
-				37284DF1243E584500B4F225 /* MapViewController.swift */,
 				3A7167E524115C7200B7A304 /* Main.storyboard */,
 				3A7167EA24115C7600B7A304 /* LaunchScreen.storyboard */,
 				3A7167E824115C7600B7A304 /* Assets.xcassets */,
