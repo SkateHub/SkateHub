@@ -79,20 +79,20 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
     {
         let post = posts[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostGridCell", for: indexPath) as! PostGridCell
-        let user = post["author"] as! PFUser
-        let currentUser = PFUser.current()
+        //let user = post["author"] as! PFUser
+        //let currentUser = PFUser.current()
         
         //issue lies in the condition of the If statment, other than that, it works
         
-        if user == currentUser
-        {
+        //if user == currentUser
+        //{
             print("got here")
             let postPicture = post["image"] as! PFFileObject
             let urlString  =  postPicture.url!
             let url = URL(string: urlString)!
             cell.postPicture.af_setImage(withURL: url)
             
-        }
+        //}
         
         return cell
     }
