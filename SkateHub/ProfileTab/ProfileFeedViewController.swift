@@ -28,6 +28,7 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
         postCollectionView.delegate = self
         postCollectionView.dataSource = self
         
+        
         if let user = PFUser.current()
         {
             //Set the profile pic
@@ -43,6 +44,8 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
             let userFirstName = user["FirstName"] as! String
             let userLastName = user["LastName"] as! String
             nameOfUserLabel.text = "\(userFirstName) \(userLastName)"
+            
+            self.currentUser = user
             
             
         }
@@ -60,6 +63,7 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
         query.findObjectsInBackground { (posts, error) in
             if posts != nil
             {
+                
                 self.posts = posts!
                 self.postCollectionView.reloadData()
             }
@@ -73,13 +77,16 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let post = posts[indexPath.section]
+        let post = posts[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostGridCell", for: indexPath) as! PostGridCell
         let user = post["author"] as! PFUser
         let currentUser = PFUser.current()
         
+        //issue lies in the condition of the If statment, other than that, it works
+        
         if user == currentUser
         {
+            print("got here")
             let postPicture = post["image"] as! PFFileObject
             let urlString  =  postPicture.url!
             let url = URL(string: urlString)!
