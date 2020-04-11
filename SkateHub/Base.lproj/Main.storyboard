@@ -476,9 +476,9 @@
         <!--Camera View Controller-->
         <scene sceneID="3oF-d7-7R9">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="tnI-P0-jo4" customClass="CameraViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tnI-P0-jo4" customClass="CameraViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="prs-Ux-WnV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0j9-RH-erD">
@@ -528,7 +528,6 @@
                         <outlet property="captionLabel" destination="E6b-Ev-81M" id="vQg-Md-7Pt"/>
                         <outlet property="imageView" destination="0j9-RH-erD" id="c43-lU-sIK"/>
                         <outlet property="postBtn" destination="5Le-gM-NM9" id="bjd-p4-z3a"/>
-                        <segue destination="FXO-MM-42J" kind="presentation" identifier="isUp" id="HaU-VZ-133"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Q3-2G-13O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -642,15 +641,10 @@
                                 <segue destination="tnI-P0-jo4" kind="presentation" id="CnZ-b4-h4N"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="profile_tab" id="PdS-De-k9q">
-                            <connections>
-                                <segue destination="nWF-ko-rei" kind="show" id="upv-VW-iqq"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="profileImg" destination="PdS-De-k9q" id="0tQ-27-ReY"/>
                         <outlet property="tableView" destination="OId-X9-kdt" id="hhf-Ff-ZWi"/>
+                        <segue destination="nWF-ko-rei" kind="show" identifier="editProfile" id="8gE-vY-0D3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="833-BB-GAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -699,7 +693,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HaU-VZ-133"/>
+        <segue reference="W0n-Dk-juP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>

@@ -12,15 +12,34 @@ import AlamofireImage
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    
-    @IBOutlet weak var profileImg: UIBarButtonItem!
+    let profileBtn=UIButton(type: .custom)
+    var barButton:UIBarButtonItem!
     var posts = [PFObject]()
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
+        profileBtn.frame=CGRect(x: 0, y: 0, width: 40, height: 40)
+        profileBtn.addTarget(self, action: #selector(editProfile(_:)), for: .touchUpInside)
+        profileBtn.imageView?.contentMode = .scaleAspectFill
+        profileBtn.clipsToBounds=true
+        let image=getImage()
+        profileBtn.af_setImage(for: .normal, url: image)
+        barButton=UIBarButtonItem(customView: profileBtn)
+        self.navigationItem.setRightBarButton(barButton, animated: true)
+    }
+    
+    @objc func editProfile(_ sender: UIButton){
+        self.performSegue(withIdentifier: "editProfile", sender: nil)
+    }
+    
+    func getImage() -> URL{
+        let user = PFUser.current()!
+        let image=user["profileImage"] as! PFFileObject
+        let urlString=image.url!
+        let url=URL(string: urlString)!
+        return url
     }
     
     override func viewDidAppear(_ animated: Bool){

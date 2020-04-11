@@ -33,10 +33,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         post.saveInBackground(block: { (success, error) in
             if success{
-                //self.dismiss(animated: true, completion: nil)
-                print("Saved!")
                 self.postBtn.isEnabled=true
-                self.performSegue(withIdentifier: "isUp", sender: nil)
+                print("Saved!")
+                self.dismiss(animated: true, completion: nil)
             }else{
                 self.postBtn.isEnabled=true
                 print("Error!")
