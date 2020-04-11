@@ -44,10 +44,6 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
             let userFirstName = user["FirstName"] as! String
             let userLastName = user["LastName"] as! String
             nameOfUserLabel.text = "\(userFirstName) \(userLastName)"
-            
-            self.currentUser = user
-            
-            
         }
         reloadInputViews()
         self.postCollectionView.reloadData()
