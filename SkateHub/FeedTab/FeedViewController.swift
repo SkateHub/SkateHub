@@ -24,6 +24,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         profileBtn.addTarget(self, action: #selector(editProfile(_:)), for: .touchUpInside)
         profileBtn.imageView?.contentMode = .scaleAspectFill
         profileBtn.clipsToBounds=true
+        profileBtn.widthAnchor.constraint(equalToConstant: 40).isActive=true
         let image=getImage()
         profileBtn.af_setImage(for: .normal, url: image)
         barButton=UIBarButtonItem(customView: profileBtn)
