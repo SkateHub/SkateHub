@@ -14,6 +14,7 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
 {
 
     var posts = [PFObject]()
+    var usersPost = [PFObject]()
     
     @IBOutlet weak var nameOfUserLabel: UILabel!
     @IBOutlet weak var bioLabel: UILabel!
@@ -27,8 +28,7 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
         
         postCollectionView.delegate = self
         postCollectionView.dataSource = self
-        
-        
+                
         if let user = PFUser.current()
         {
             //Set the profile pic
@@ -45,6 +45,7 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
             let userLastName = user["LastName"] as! String
             nameOfUserLabel.text = "\(userFirstName) \(userLastName)"
         }
+        
         reloadInputViews()
         self.postCollectionView.reloadData()
     }
@@ -52,43 +53,64 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        
+        getPosts()
+        userPostsSetUp()
+    }
+    
+    func getPosts()
+    {
         let query = PFQuery(className:"Posts")
         query.includeKeys(["author", "image"])
         query.limit = 20
         query.findObjectsInBackground { (posts, error) in
             if posts != nil
             {
-                
                 self.posts = posts!
                 self.postCollectionView.reloadData()
             }
         }
     }
     
+    func userPostsSetUp()
+    {
+        for post in posts
+        {
+            let authorOfPost = post["author"] as! PFObject
+            let potentialUser = authorOfPost.objectId!
+            
+            let currentUser = PFUser.current()?.objectId!
+            
+            if (potentialUser == currentUser)
+            {
+                usersPost.append(post)
+            }
+            
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return posts.count
+        userPostsSetUp()
+        return usersPost.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        let post = posts[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostGridCell", for: indexPath) as! PostGridCell
-        //let user = post["author"] as! PFUser
-        //let currentUser = PFUser.current()
         
-        //issue lies in the condition of the If statment, other than that, it works
+        //userPostsSetUp()
         
-        //if user == currentUser
-        //{
-            print("got here")
+        print(indexPath.item)
+        
+        if (usersPost.count != 0)
+        {
+            let post = usersPost[indexPath.item]
             let postPicture = post["image"] as! PFFileObject
             let urlString  =  postPicture.url!
             let url = URL(string: urlString)!
             cell.postPicture.af_setImage(withURL: url)
-            
-        //}
+        }
         
         return cell
     }
