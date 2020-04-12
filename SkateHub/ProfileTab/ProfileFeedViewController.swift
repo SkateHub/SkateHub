@@ -99,10 +99,6 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
     {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostGridCell", for: indexPath) as! PostGridCell
         
-        //userPostsSetUp()
-        
-        print(indexPath.item)
-        
         if (usersPost.count != 0)
         {
             let post = usersPost[indexPath.item]
