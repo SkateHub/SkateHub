@@ -190,4 +190,4 @@ Allows other skaters to socialize and share their progress.
 ![HUBO](https://user-images.githubusercontent.com/44143466/78502052-03d8e080-772d-11ea-9edc-89292c7fd561.gif)
 
 ## Demo of second sprint
-<img src=http://g.recordit.co/vNQ3ORYP1V.gif width=250><br>
+<img src=http://g.recordit.co/vNQ3ORYP1V.gif width=300><br>
