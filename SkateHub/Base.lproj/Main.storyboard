@@ -473,15 +473,93 @@
             </objects>
             <point key="canvasLocation" x="1496" y="2997"/>
         </scene>
+        <!--Custom Camera View Controller-->
+        <scene sceneID="bb6-Fn-JTD">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="Gao-7O-Ow0" customClass="CustomCameraViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q57-yr-9Br">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dpo-1S-4pS">
+                                <rect key="frame" x="0.0" y="0.0" width="426" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWe-pZ-uaV">
+                                        <rect key="frame" x="0.0" y="0.0" width="418" height="896"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R5l-BT-y6z">
+                                        <rect key="frame" x="158" y="748.5" width="102" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="stop.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="onCapture:" destination="Gao-7O-Ow0" eventType="touchUpInside" id="3kx-YP-oGI"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IzL-k4-Tpi">
+                                        <rect key="frame" x="268" y="775.5" width="50" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="gobackward" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tryAgain:" destination="Gao-7O-Ow0" eventType="touchUpInside" id="dDV-K4-z0I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJF-l4-Wfq">
+                                        <rect key="frame" x="8" y="780" width="54" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="arrowshape.turn.up.left.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onExit:" destination="Gao-7O-Ow0" eventType="touchUpInside" id="AVk-MQ-EoB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTP-uE-qrd">
+                                        <rect key="frame" x="100" y="775.5" width="50" height="49"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="photo.on.rectangle" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="grabPhoto:" destination="Gao-7O-Ow0" eventType="touchUpInside" id="39A-Dd-ZsQ"/>
+                                            <action selector="tryAgain:" destination="Gao-7O-Ow0" eventType="touchUpInside" id="k4e-2v-jIF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="OVE-H8-stT"/>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="IzL-k4-Tpi" id="IxV-uY-YXF"/>
+                        <outlet property="captureImageView" destination="aWe-pZ-uaV" id="CKr-sp-LwX"/>
+                        <outlet property="previewView" destination="Dpo-1S-4pS" id="Vsi-SM-3fB"/>
+                        <outlet property="takePicBtn" destination="R5l-BT-y6z" id="avK-w9-dQt"/>
+                        <segue destination="tnI-P0-jo4" kind="showDetail" identifier="sendIt" id="Vto-94-ZnM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xY1-nx-qzi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.768115942028992" y="2996.6517857142858"/>
+        </scene>
         <!--Camera View Controller-->
         <scene sceneID="3oF-d7-7R9">
             <objects>
-                <viewController id="tnI-P0-jo4" customClass="CameraViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="tnI-P0-jo4" customClass="CameraViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="prs-Ux-WnV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0j9-RH-erD">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0j9-RH-erD">
                                 <rect key="frame" x="56" y="105" width="302" height="338"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -528,6 +606,7 @@
                         <outlet property="captionLabel" destination="E6b-Ev-81M" id="vQg-Md-7Pt"/>
                         <outlet property="imageView" destination="0j9-RH-erD" id="c43-lU-sIK"/>
                         <outlet property="postBtn" destination="5Le-gM-NM9" id="bjd-p4-z3a"/>
+                        <segue destination="FXO-MM-42J" kind="presentation" identifier="done" id="IV0-gf-oAS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Q3-2G-13O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -638,7 +717,7 @@
                     <navigationItem key="navigationItem" id="uRl-MX-P1E">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="insta_camera_btn" id="M85-Fn-OJy">
                             <connections>
-                                <segue destination="tnI-P0-jo4" kind="presentation" id="CnZ-b4-h4N"/>
+                                <segue destination="Gao-7O-Ow0" kind="presentation" id="VbD-Dt-W7V"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -693,14 +772,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W0n-Dk-juP"/>
+        <segue reference="IV0-gf-oAS"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowshape.turn.up.left.fill" catalog="system" width="128" height="106"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
+        <image name="gobackward" catalog="system" width="121" height="128"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="photo.on.rectangle" catalog="system" width="128" height="98"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="profile_tab" width="25" height="25"/>
+        <image name="stop.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

@@ -14,9 +14,11 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var captionField: UITextView!
     @IBOutlet weak var postBtn: UIButton!
+    var retrievePhoto:UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image=retrievePhoto
     }
     
     @IBAction func onPostButton(_ sender: Any) {
@@ -35,7 +37,7 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             if success{
                 self.postBtn.isEnabled=true
                 print("Saved!")
-                self.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "done", sender: nil)
             }else{
                 self.postBtn.isEnabled=true
                 print("Error!")
@@ -43,35 +45,6 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
 
             
         })
-        
-    }
-    
-    @IBAction func onCameraButton(_ sender: Any) {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera){
-            picker.sourceType = .camera
-        }else{
-            picker.sourceType = .photoLibrary
-        }
-        present(picker, animated: true, completion: nil)
-        
-        
-    }
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let image = info[.editedImage] as! UIImage
-        let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageScaled(to: size)
-        
-        imageView.image = scaledImage
-        
-        dismiss(animated: true, completion: nil)
-        
-        
-        
-        
         
     }
 
