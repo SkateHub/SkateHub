@@ -54,8 +54,8 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
     {
         super.viewDidAppear(animated)
         getPosts()
-        userPostsSetUp()
     }
+    
     
     func getPosts()
     {
@@ -66,6 +66,7 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
             if posts != nil
             {
                 self.posts = posts!
+                self.userPostsSetUp()
                 self.postCollectionView.reloadData()
             }
         }
@@ -90,7 +91,7 @@ class ProfileFeedViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        userPostsSetUp()
+
         return usersPost.count
     }
     

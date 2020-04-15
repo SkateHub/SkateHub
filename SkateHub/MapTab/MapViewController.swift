@@ -38,7 +38,7 @@ class MapViewController: UIViewController {
         case .authorizedWhenInUse:
             let lat=mapManager.location?.coordinate.latitude
             let long=mapManager.location?.coordinate.longitude
-            let location=CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+            let location = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
             let span=MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
             let region=MKCoordinateRegion(center: location, span: span)
             mapView.setRegion(region, animated: true)
