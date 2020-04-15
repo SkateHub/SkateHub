@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+terterclass AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 

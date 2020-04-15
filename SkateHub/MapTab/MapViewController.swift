@@ -11,11 +11,14 @@ import MapKit
 
 class MapViewController: UIViewController {
 
+    @IBOutlet weak var popUp: UIView!
     @IBOutlet weak var mapView: MKMapView!
     let mapManager=CLLocationManager()
+    var prevMarker:MKPointAnnotation!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        popUp.isHidden=true
         mapView.mapType = .hybrid
         serviceCheck()
         // Do any additional setup after loading the view.
@@ -51,7 +54,29 @@ class MapViewController: UIViewController {
             break
         }
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch=touches.first {
+            let position=touch.location(in: mapView)
+            let cord=mapView.convert(position, toCoordinateFrom: mapView)
+            let marker=MKPointAnnotation()
+            marker.coordinate=cord
+            if prevMarker != nil{
+                mapView.removeAnnotation(prevMarker)
+                mapView.addAnnotation(marker)
+                prevMarker=marker
+                popUp.isHidden=false
+            } else{
+                prevMarker=marker
+                mapView.addAnnotation(marker)
+                popUp.isHidden=false
+            }
+        }
+    }
+    @IBAction func onExit(_ sender: Any) {
+        popUp.isHidden=true
+    }
+    
     /*
     // MARK: - Navigation
 
