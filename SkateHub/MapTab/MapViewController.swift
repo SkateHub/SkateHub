@@ -23,18 +23,34 @@ class MapViewController: UIViewController {
         super.viewDidLoad()
         popUp.isHidden=true
         mapView.mapType = .hybrid
-        updateSpots()
         serviceCheck()
+        updateSpots()
         // Do any additional setup after loading the view.
     }
-    
+
     func updateSpots(){
         let query=PFQuery(className: "Spots")
         query.findObjectsInBackground(block: {(spot,error) in
-            if spot != nil{
+            if(spot != nil){
                 self.spots=spot!
+                self.createMarkers()
             }
         })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateSpots()
+    }
+    
+    func createMarkers(){
+        for location in spots{
+            let marker=MKPointAnnotation()
+            let lat=location["coordinates"] as! PFGeoPoint
+            let convertedLat=CLLocationCoordinate2D(latitude: lat.latitude, longitude: lat.longitude)
+            marker.coordinate=convertedLat
+            mapView.addAnnotation(marker)
+        }
     }
     
     func serviceCheck(){
