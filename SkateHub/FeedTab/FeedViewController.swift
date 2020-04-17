@@ -16,6 +16,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     var barButton:UIBarButtonItem!
     var posts = [PFObject]()
     
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         tableView.delegate = self
@@ -29,7 +30,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         profileBtn.af_setImage(for: .normal, url: image)
         barButton=UIBarButtonItem(customView: profileBtn)
         self.navigationItem.setRightBarButton(barButton, animated: true)
+        
     }
+    
     
     @objc func editProfile(_ sender: UIButton){
         self.performSegue(withIdentifier: "editProfile", sender: nil)

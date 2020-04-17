@@ -13,7 +13,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var captionLabel: UILabel!
-    
+    @IBOutlet weak var favButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
