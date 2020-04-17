@@ -29,7 +29,7 @@ Allows other skaters to socialize and share their progress.
 
 **Optional Nice-to-have Stories**
 
- - [ ] User can pin skate spots on a map
+ - [x] User can pin skate spots on a map
  - [x] User can edit their profile
  - [ ] User can follow/unfollow users
  - [ ] User can see a tab of whom they follow
