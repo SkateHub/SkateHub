@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Parse
 
 class MapViewController: UIViewController {
 
@@ -15,13 +16,25 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     let mapManager=CLLocationManager()
     var prevMarker:MKPointAnnotation!
+    var coordinates:CLLocationCoordinate2D!
+    var spots=[PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         popUp.isHidden=true
         mapView.mapType = .hybrid
+        updateSpots()
         serviceCheck()
         // Do any additional setup after loading the view.
+    }
+    
+    func updateSpots(){
+        let query=PFQuery(className: "Spots")
+        query.findObjectsInBackground(block: {(spot,error) in
+            if spot != nil{
+                self.spots=spot!
+            }
+        })
     }
     
     func serviceCheck(){
@@ -59,6 +72,7 @@ class MapViewController: UIViewController {
         if let touch=touches.first {
             let position=touch.location(in: mapView)
             let cord=mapView.convert(position, toCoordinateFrom: mapView)
+            coordinates=cord
             let marker=MKPointAnnotation()
             marker.coordinate=cord
             if prevMarker != nil{
@@ -77,6 +91,19 @@ class MapViewController: UIViewController {
         popUp.isHidden=true
     }
     
+    @IBAction func onSpot(_ sender: Any) {
+        let convert=PFGeoPoint(latitude: coordinates.latitude , longitude: coordinates.longitude )
+        let spot=PFObject(className: "Spots")
+        spot["coordinates"]=convert
+        spot.saveInBackground(block: { (success,error) in
+            if success{
+                print("spot saved")
+            } else{
+                print("Error with spot!")
+            }
+        })
+        
+    }
     /*
     // MARK: - Navigation
 
