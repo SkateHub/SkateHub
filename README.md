@@ -24,7 +24,8 @@ Allows other skaters to socialize and share their progress.
  - [x] User can log out
  - [X] User can view a feed of photos/posts
  - [X] User can create a photo/post
- - [ ] User can comment/like a post
+ - [X] User can comment on a post
+ - [ ] User can like a post
  
 
 **Optional Nice-to-have Stories**
