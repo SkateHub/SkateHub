@@ -117,6 +117,7 @@ class MapViewController: UIViewController {
                     prevMarker=marker
                     mapView.addAnnotation(marker)
                 }
+               // self.performSegue(withIdentifier: "spotMenu", sender: nil)
             }
         }
         if editEnabled == false && prevMarker != nil{
