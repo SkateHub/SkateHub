@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		37284DF2243E584500B4F225 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37284DF1243E584500B4F225 /* MapViewController.swift */; };
 		3784EA65244113860013E099 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3784EA64244113860013E099 /* MapKit.framework */; };
+		379E654B2451EEDF00084A61 /* addSpotView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 379E654A2451EEDF00084A61 /* addSpotView.xib */; };
+		379E654D2451EF1900084A61 /* addSpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379E654C2451EF1900084A61 /* addSpotView.swift */; };
 		3A307F1E24422C0E00EA2E70 /* PostGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A307F1D24422C0E00EA2E70 /* PostGridCell.swift */; };
 		3A41A750243E445200908DA4 /* ProfileFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A41A74F243E445200908DA4 /* ProfileFeedViewController.swift */; };
 		3A7167E024115C7200B7A304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7167DF24115C7200B7A304 /* AppDelegate.swift */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		37284DF1243E584500B4F225 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3784EA64244113860013E099 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		379E654A2451EEDF00084A61 /* addSpotView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addSpotView.xib; sourceTree = "<group>"; };
+		379E654C2451EF1900084A61 /* addSpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addSpotView.swift; sourceTree = "<group>"; };
 		37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SkateHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3947B0227D5E81B7EBF15362 /* Pods-SkateHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SkateHub.release.xcconfig"; path = "Target Support Files/Pods-SkateHub/Pods-SkateHub.release.xcconfig"; sourceTree = "<group>"; };
 		3A307F1D24422C0E00EA2E70 /* PostGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridCell.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				37284DF1243E584500B4F225 /* MapViewController.swift */,
+				379E654C2451EF1900084A61 /* addSpotView.swift */,
+				379E654A2451EEDF00084A61 /* addSpotView.xib */,
 			);
 			path = MapTab;
 			sourceTree = "<group>";
@@ -87,6 +93,7 @@
 				8DD534F62437E73400BDA4CB /* PostCell.swift */,
 				8D80B7F2243ECA87001BF1C9 /* CameraViewController.swift */,
 				8D4FF60C243FF95600C9D0D4 /* FeedViewController.swift */,
+				8DB94DDD244BD8EC004AECCC /* CommentCell.swift */,
 			);
 			path = FeedTab;
 			sourceTree = "<group>";
@@ -123,15 +130,14 @@
 			children = (
 				3A7167DF24115C7200B7A304 /* AppDelegate.swift */,
 				3A7167E124115C7200B7A304 /* SceneDelegate.swift */,
+				3A7167F324115FA300B7A304 /* LogInViewController.swift */,
+				3A7167F524115FDE00B7A304 /* SignUpViewController.swift */,
+				3A7167E824115C7600B7A304 /* Assets.xcassets */,
 				3A41A752243E46BF00908DA4 /* ProfileTab */,
 				3A41A751243E468D00908DA4 /* FeedTab */,
 				3784EA66244121630013E099 /* MapTab */,
-				3A7167F324115FA300B7A304 /* LogInViewController.swift */,
-				8DB94DDD244BD8EC004AECCC /* CommentCell.swift */,
-				3A7167F524115FDE00B7A304 /* SignUpViewController.swift */,
-				3A7167E524115C7200B7A304 /* Main.storyboard */,
 				3A7167EA24115C7600B7A304 /* LaunchScreen.storyboard */,
-				3A7167E824115C7600B7A304 /* Assets.xcassets */,
+				3A7167E524115C7200B7A304 /* Main.storyboard */,
 				3A7167ED24115C7600B7A304 /* Info.plist */,
 			);
 			path = SkateHub;
@@ -208,6 +214,7 @@
 			files = (
 				3A7167EC24115C7600B7A304 /* LaunchScreen.storyboard in Resources */,
 				3A7167E924115C7600B7A304 /* Assets.xcassets in Resources */,
+				379E654B2451EEDF00084A61 /* addSpotView.xib in Resources */,
 				3A7167E724115C7200B7A304 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +276,7 @@
 				37284DF2243E584500B4F225 /* MapViewController.swift in Sources */,
 				3A7167F424115FA300B7A304 /* LogInViewController.swift in Sources */,
 				8D4FF60D243FF95600C9D0D4 /* FeedViewController.swift in Sources */,
+				379E654D2451EF1900084A61 /* addSpotView.swift in Sources */,
 				3A7167F624115FDE00B7A304 /* SignUpViewController.swift in Sources */,
 				3A41A750243E445200908DA4 /* ProfileFeedViewController.swift in Sources */,
 				3A7167E224115C7200B7A304 /* SceneDelegate.swift in Sources */,

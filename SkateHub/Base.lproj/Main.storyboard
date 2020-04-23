@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -249,8 +249,58 @@
                                     <outletCollection property="gestureRecognizers" destination="d0o-6t-L3I" appends="YES" id="FtX-5B-QAo"/>
                                 </connections>
                             </mapView>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-2M-Mmk">
+                                <rect key="frame" x="318" y="775" width="76" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="8"/>
+                                <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Hide/ Show menu">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="onMenu:" destination="4xw-wh-1nP" eventType="touchUpInside" id="Zbp-fG-p3M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vC-Cm-b41">
+                                <rect key="frame" x="349" y="44.5" width="45" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" backgroundImage="plus.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <action selector="onEdit:" destination="4xw-wh-1nP" eventType="touchUpInside" id="Ab6-8W-Ep4"/>
+                                    <action selector="onEditBG:" destination="nWF-ko-rei" eventType="touchUpInside" id="wIc-eZ-M3y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6tK-hB-kfS"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CuB-p1-Gjf"/>
+                    <connections>
+                        <outlet property="mapView" destination="nNv-pK-nsb" id="WYP-Y9-rwm"/>
+                        <outlet property="menuBtn" destination="TXs-2M-Mmk" id="Pnd-kd-ToO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aj0-Ns-KZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="d0o-6t-L3I"/>
+            </objects>
+            <point key="canvasLocation" x="205.79710144927537" y="2266.0714285714284"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Jb4-37-mNN">
+            <objects>
+                <viewController id="OIL-bp-jst" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UNi-xa-FFz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eG1-hR-xTL">
-                                <rect key="frame" x="82" y="271" width="251" height="277"/>
+                                <rect key="frame" x="82" y="310" width="251" height="277"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="photo.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="c27-7r-MOP">
@@ -308,18 +358,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6tK-hB-kfS"/>
+                        <viewLayoutGuide key="safeArea" id="7re-K7-x9y"/>
                     </view>
-                    <navigationItem key="navigationItem" id="CuB-p1-Gjf"/>
-                    <connections>
-                        <outlet property="mapView" destination="nNv-pK-nsb" id="WYP-Y9-rwm"/>
-                        <outlet property="popUp" destination="eG1-hR-xTL" id="XI5-if-Gw5"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aj0-Ns-KZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="d0o-6t-L3I"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ik-hn-CvY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="205.79710144927537" y="2266.0714285714284"/>
+            <point key="canvasLocation" x="-536" y="2265"/>
         </scene>
         <!--Profile Feed View Controller-->
         <scene sceneID="m9e-nQ-tJj">
@@ -431,7 +475,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Edit bio..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zYW-mo-y1O">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="Edit bio..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zYW-mo-y1O">
                                 <rect key="frame" x="31" y="409" width="353" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93206694162436543" green="0.93206694162436543" blue="0.93206694162436543" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -605,12 +649,14 @@
         <!--Spots-->
         <scene sceneID="tXa-qi-u3d">
             <objects>
-                <navigationController id="TSI-HW-U6s" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="TSI-HW-U6s" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Spots" image="mappin.and.ellipse" catalog="system" id="YVu-sW-k0p"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xgS-1g-f1O">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bU7-jX-wBk">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="4xw-wh-1nP" kind="relationship" relationship="rootViewController" id="6DE-xI-EE5"/>
                     </connections>
@@ -739,14 +785,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddCommentCell" id="tIm-fL-4NI">
-                                        <rect key="frame" x="0.0" y="620" width="414" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="620" width="414" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tIm-fL-4NI" id="aRe-Vj-x4n">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vc-as-mJG">
-                                                    <rect key="frame" x="31" y="8" width="375" height="21.5"/>
+                                                    <rect key="frame" x="31" y="8" width="375" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -834,6 +880,7 @@
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="photo.fill" catalog="system" width="128" height="93"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="profile_tab" width="25" height="25"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>

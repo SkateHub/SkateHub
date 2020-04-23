@@ -12,21 +12,38 @@ import Parse
 
 class MapViewController: UIViewController {
 
-    @IBOutlet weak var popUp: UIView!
     @IBOutlet weak var mapView: MKMapView!
     let mapManager=CLLocationManager()
     var prevMarker:MKPointAnnotation!
     var coordinates:CLLocationCoordinate2D!
     var spots=[PFObject]()
+    var menuOn=true
+    var editEnabled=false
+    @IBOutlet weak var menuBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        popUp.isHidden=true
         mapView.mapType = .hybrid
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        menuBtn.layer.cornerRadius=6
         serviceCheck()
         updateSpots()
+        self.view.layoutIfNeeded()
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func onMenu(_ sender: Any) {
+        menuOn = !menuOn
+        if menuOn{
+            self.tabBarController?.tabBar.isHidden=false
+        } else{
+            self.tabBarController?.tabBar.isHidden=true
+        }
+    }
+    @IBAction func onEdit(_ sender: Any) {
+        editEnabled = !editEnabled
+    }
+    
 
     func updateSpots(){
         let query=PFQuery(className: "Spots")
@@ -85,26 +102,26 @@ class MapViewController: UIViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch=touches.first {
-            let position=touch.location(in: mapView)
-            let cord=mapView.convert(position, toCoordinateFrom: mapView)
-            coordinates=cord
-            let marker=MKPointAnnotation()
-            marker.coordinate=cord
-            if prevMarker != nil{
-                mapView.removeAnnotation(prevMarker)
-                mapView.addAnnotation(marker)
-                prevMarker=marker
-                popUp.isHidden=false
-            } else{
-                prevMarker=marker
-                mapView.addAnnotation(marker)
-                popUp.isHidden=false
+        if editEnabled{
+            if let touch=touches.first {
+                let position=touch.location(in: mapView)
+                let cord=mapView.convert(position, toCoordinateFrom: mapView)
+                coordinates=cord
+                let marker=MKPointAnnotation()
+                marker.coordinate=cord
+                if prevMarker != nil{
+                    mapView.removeAnnotation(prevMarker)
+                    mapView.addAnnotation(marker)
+                    prevMarker=marker
+                } else{
+                    prevMarker=marker
+                    mapView.addAnnotation(marker)
+                }
             }
         }
-    }
-    @IBAction func onExit(_ sender: Any) {
-        popUp.isHidden=true
+        if editEnabled == false && prevMarker != nil{
+            mapView.removeAnnotation(prevMarker)
+        }
     }
     
     @IBAction func onSpot(_ sender: Any) {
