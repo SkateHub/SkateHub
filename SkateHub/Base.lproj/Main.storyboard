@@ -290,28 +290,101 @@
                                 <rect key="frame" x="349" y="44.5" width="45" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="plus.circle.fill" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
                                 </state>
                                 <connections>
                                     <action selector="onEdit:" destination="4xw-wh-1nP" eventType="touchUpInside" id="Ab6-8W-Ep4"/>
-                                    <action selector="onEditBG:" destination="nWF-ko-rei" eventType="touchUpInside" id="wIc-eZ-M3y"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BYU-4E-d9b">
+                                <rect key="frame" x="0.0" y="616" width="414" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG3-ar-6oH">
+                                        <rect key="frame" x="174" y="229.5" width="66" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Add spot ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onSpot:" destination="4xw-wh-1nP" eventType="touchUpInside" id="Gzi-rV-BGB"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Spot Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPe-vu-0CX">
+                                        <rect key="frame" x="25" y="185.5" width="107" height="23"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter name here..." translatesAutoresizingMaskIntoConstraints="NO" id="VVS-yI-w9I">
+                                        <rect key="frame" x="151" y="182.5" width="238" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <gestureRecognizers/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="location"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="2wd-oZ-sJS" appends="YES" id="Iyb-GO-6oh"/>
+                                        </connections>
+                                    </textView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fmy-Jn-VXc">
+                                        <rect key="frame" x="145" y="8.5" width="126" height="165"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.93206694160000003" green="0.93206694160000003" blue="0.93206694160000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="aMt-qO-kx7" appends="YES" id="LoL-iF-NlO"/>
+                                        </connections>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efP-8T-b9V">
+                                        <rect key="frame" x="8" y="8" width="42" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="arrow.left.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onBack:" destination="4xw-wh-1nP" eventType="touchUpInside" id="t6o-KD-WFw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6tK-hB-kfS"/>
                     </view>
                     <navigationItem key="navigationItem" id="CuB-p1-Gjf"/>
                     <connections>
+                        <outlet property="editBtn" destination="7vC-Cm-b41" id="se0-FN-0wX"/>
                         <outlet property="mapView" destination="nNv-pK-nsb" id="WYP-Y9-rwm"/>
                         <outlet property="menuBtn" destination="TXs-2M-Mmk" id="Pnd-kd-ToO"/>
+                        <outlet property="spotImage" destination="Fmy-Jn-VXc" id="bSk-08-eOf"/>
+                        <outlet property="spotLabel" destination="VVS-yI-w9I" id="JlO-go-WO3"/>
+                        <outlet property="spotView" destination="BYU-4E-d9b" id="RXq-dv-ms8"/>
+                        <outlet property="submitBtn" destination="zG3-ar-6oH" id="n4t-Jr-Yfn"/>
+                        <outlet property="tapGes" destination="d0o-6t-L3I" id="7Nl-N8-nKf"/>
                         <segue destination="912-ed-6Tc" kind="presentation" identifier="spotMenu" id="De2-NZ-PYH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aj0-Ns-KZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="d0o-6t-L3I"/>
+                <tapGestureRecognizer id="aMt-qO-kx7">
+                    <connections>
+                        <action selector="onImagePicker:" destination="4xw-wh-1nP" id="YiH-5q-0Vz"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="2wd-oZ-sJS">
+                    <connections>
+                        <action selector="onNameLabel:" destination="4xw-wh-1nP" id="1gl-Rc-iee"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="205.79710144927537" y="2266.0714285714284"/>
         </scene>
@@ -732,14 +805,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddCommentCell" id="tIm-fL-4NI">
-                                        <rect key="frame" x="0.0" y="620" width="414" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="620" width="414" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tIm-fL-4NI" id="aRe-Vj-x4n">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vc-as-mJG">
-                                                    <rect key="frame" x="31" y="8" width="375" height="21.5"/>
+                                                    <rect key="frame" x="31" y="8" width="375" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -820,6 +893,8 @@
         <segue reference="A2V-FH-ZZg"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.left.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="favor-icon" width="30" height="30"/>

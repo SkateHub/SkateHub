@@ -10,16 +10,23 @@ import UIKit
 import MapKit
 import Parse
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var spotView: UIView!
+    @IBOutlet weak var spotLabel: UITextView!
+    @IBOutlet weak var spotImage: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var submitBtn: UIButton!
     let mapManager=CLLocationManager()
     var prevMarker:MKPointAnnotation!
     var coordinates:CLLocationCoordinate2D!
     var spots=[PFObject]()
     var menuOn=true
+    var height:CGFloat!
     var editEnabled=false
+    @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var menuBtn: UIButton!
+    @IBOutlet var tapGes: UITapGestureRecognizer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +35,18 @@ class MapViewController: UIViewController {
         menuBtn.layer.cornerRadius=6
         serviceCheck()
         updateSpots()
+        submitBtn.layer.cornerRadius=6
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         self.view.layoutIfNeeded()
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification){
+        if let frame:NSValue=notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue{
+            let keyboard=frame.cgRectValue
+            height=keyboard.height
+            print(height)
+        }
     }
     
     @IBAction func onMenu(_ sender: Any) {
@@ -42,9 +59,26 @@ class MapViewController: UIViewController {
     }
     @IBAction func onEdit(_ sender: Any) {
         editEnabled = !editEnabled
+        if editEnabled{
+            self.tabBarController?.tabBar.isHidden=true
+            menuBtn.isHidden=true
+            editBtn.tintColor=UIColor.green
+        } else{
+            self.tabBarController?.tabBar.isHidden=false
+            menuBtn.isHidden=false
+            editBtn.isSelected=false
+            editBtn.tintColor=UIColor.red
+            spotView.isHidden=true
+        }
+    }
+    @IBAction func onBack(_ sender: Any) {
+        tapGes.isEnabled=true
+        spotView.isHidden=true
+    }
+    @IBAction func onNameLabel(_ sender: Any){
+        print("working")
     }
     
-
     func updateSpots(){
         let query=PFQuery(className: "Spots")
         query.findObjectsInBackground(block: {(spot,error) in
@@ -101,14 +135,41 @@ class MapViewController: UIViewController {
         }
     }
     
+    @IBAction func onImagePicker(_ sender: Any) {
+        print("Clicked")
+        let picker = UIImagePickerController()
+        picker.allowsEditing = true
+        picker.delegate = self
+        if(UIImagePickerController.isSourceTypeAvailable( .camera)){
+            picker.sourceType = .camera
+        } else{
+            picker.sourceType = .photoLibrary
+            
+        }
+        present(picker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.editedImage] as! UIImage
+        spotImage.image=image
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if editEnabled{
+        if editEnabled && tapGes.isEnabled{
+            if spotView.isHidden{
+                spotView.isHidden=false
+            }
             if let touch=touches.first {
                 let position=touch.location(in: mapView)
                 let cord=mapView.convert(position, toCoordinateFrom: mapView)
                 coordinates=cord
                 let marker=MKPointAnnotation()
                 marker.coordinate=cord
+                tapGes.isEnabled=false
+                let span=MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                let region=MKCoordinateRegion(center: coordinates, span: span)
+                mapView.setRegion(region, animated: true)
                 if prevMarker != nil{
                     mapView.removeAnnotation(prevMarker)
                     mapView.addAnnotation(marker)
