@@ -22,8 +22,6 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     let profileBtn=UIButton(type: .custom)
     var barButton:UIBarButtonItem!
 
-    
-    
     override func viewDidLoad(){
         super.viewDidLoad()
         commentBar.inputTextView.placeholder = "Add a comment..."

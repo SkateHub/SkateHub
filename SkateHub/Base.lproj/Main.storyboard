@@ -320,7 +320,7 @@
                                         <color key="textColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter name here..." translatesAutoresizingMaskIntoConstraints="NO" id="VVS-yI-w9I">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter spot name here..." translatesAutoresizingMaskIntoConstraints="NO" id="VVS-yI-w9I">
                                         <rect key="frame" x="151" y="182.5" width="238" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -328,19 +328,12 @@
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="location"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="2wd-oZ-sJS" appends="YES" id="Iyb-GO-6oh"/>
-                                        </connections>
                                     </textView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fmy-Jn-VXc">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fmy-Jn-VXc">
                                         <rect key="frame" x="145" y="8.5" width="126" height="165"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.93206694160000003" green="0.93206694160000003" blue="0.93206694160000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="aMt-qO-kx7" appends="YES" id="LoL-iF-NlO"/>
-                                        </connections>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efP-8T-b9V">
                                         <rect key="frame" x="8" y="8" width="42" height="32"/>
@@ -351,6 +344,17 @@
                                         </state>
                                         <connections>
                                             <action selector="onBack:" destination="4xw-wh-1nP" eventType="touchUpInside" id="t6o-KD-WFw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8z-5w-1sb">
+                                        <rect key="frame" x="279" y="0.0" width="40" height="38"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99725967650000003" green="0.48404932020000002" blue="0.41173410420000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" image="plus.circle.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onImagePicker:" destination="4xw-wh-1nP" eventType="touchUpInside" id="lr3-Qe-66f"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -375,16 +379,6 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aj0-Ns-KZk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="d0o-6t-L3I"/>
-                <tapGestureRecognizer id="aMt-qO-kx7">
-                    <connections>
-                        <action selector="onImagePicker:" destination="4xw-wh-1nP" id="YiH-5q-0Vz"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="2wd-oZ-sJS">
-                    <connections>
-                        <action selector="onNameLabel:" destination="4xw-wh-1nP" id="1gl-Rc-iee"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="205.79710144927537" y="2266.0714285714284"/>
         </scene>
@@ -741,6 +735,9 @@
                                                         <constraint firstAttribute="height" constant="30" id="vos-rf-2vp"/>
                                                     </constraints>
                                                     <state key="normal" title="Button" image="favor-icon"/>
+                                                    <connections>
+                                                        <action selector="test:" destination="kTx-9h-hCX" eventType="touchUpInside" id="P1w-70-8TV"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -893,8 +890,8 @@
         <segue reference="A2V-FH-ZZg"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="arrow.left.circle.fill" catalog="system" width="128" height="121"/>
-        <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="favor-icon" width="30" height="30"/>

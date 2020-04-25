@@ -45,7 +45,11 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         if let frame:NSValue=notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue{
             let keyboard=frame.cgRectValue
             height=keyboard.height
-            print(height)
+            if height<100{
+                spotView.transform=CGAffineTransform.identity
+            } else{
+            spotView.transform=CGAffineTransform(translationX: 0, y: -height)
+            }
         }
     }
     
@@ -74,9 +78,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBAction func onBack(_ sender: Any) {
         tapGes.isEnabled=true
         spotView.isHidden=true
-    }
-    @IBAction func onNameLabel(_ sender: Any){
-        print("working")
     }
     
     func updateSpots(){
@@ -136,7 +137,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @IBAction func onImagePicker(_ sender: Any) {
-        print("Clicked")
         let picker = UIImagePickerController()
         picker.allowsEditing = true
         picker.delegate = self
@@ -178,7 +178,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                     prevMarker=marker
                     mapView.addAnnotation(marker)
                 }
-               // self.performSegue(withIdentifier: "spotMenu", sender: nil)
             }
         }
         if editEnabled == false && prevMarker != nil{
@@ -187,16 +186,32 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     @IBAction func onSpot(_ sender: Any) {
+        self.submitBtn.isEnabled=false
         let convert=PFGeoPoint(latitude: coordinates.latitude , longitude: coordinates.longitude )
         let spot=PFObject(className: "Spots")
         spot["coordinates"]=convert
-        spot.saveInBackground(block: { (success,error) in
-            if success{
-                print("spot saved")
-            } else{
-                print("Error with spot!")
-            }
-        })
+        spot["name"]=spotLabel.text
+        let imageData=spotImage.image?.pngData()
+        let imageFile=PFFileObject(name: "spotImage.png", data: imageData!)
+        spot["spotImage"]=imageFile
+        if spotLabel.text.count>25 {
+            let alrtContrl=UIAlertController(title: "Spot name too long", message: "Please shorten to less than 25 characters.", preferredStyle: .alert)
+            let action=UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alrtContrl.addAction(action)
+            self.present(alrtContrl,animated: true,completion: nil)
+        } else{
+            spot.saveInBackground(block: { (success,error) in
+                if success{
+                    print("spot saved")
+                    self.submitBtn.isEnabled=true
+                } else{
+                    print("Error with spot!")
+                }
+            })
+            spotView.isHidden=true
+            spotImage.image=nil
+            spotLabel.text="Enter spot name here..."
+        }
         
     }
     /*
