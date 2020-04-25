@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -707,7 +707,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="NFe-qW-DFs"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s1H-p6-b2Y">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s1H-p6-b2Y">
                                                     <rect key="frame" x="20" y="2" width="46" height="74"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="46" id="eay-Nf-0lD"/>
@@ -736,7 +736,7 @@
                                                     </constraints>
                                                     <state key="normal" title="Button" image="favor-icon"/>
                                                     <connections>
-                                                        <action selector="test:" destination="kTx-9h-hCX" eventType="touchUpInside" id="P1w-70-8TV"/>
+                                                        <action selector="onLike:" destination="0Wj-He-ZCv" eventType="touchUpInside" id="P8T-Qo-bnW"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -761,6 +761,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionLabel" destination="FqX-xd-Jmm" id="ope-kF-3zP"/>
+                                            <outlet property="likeBtn" destination="7sd-F5-nx8" id="Qrg-lY-MZs"/>
                                             <outlet property="postImage" destination="3oP-M6-MUG" id="7nh-8l-cta"/>
                                             <outlet property="profilePicture" destination="s1H-p6-b2Y" id="R7D-5N-Idf"/>
                                             <outlet property="usernameLabel" destination="Mj1-fe-5WU" id="Aom-6w-ttE"/>

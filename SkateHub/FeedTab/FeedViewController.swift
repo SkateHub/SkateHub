@@ -21,7 +21,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let profileBtn=UIButton(type: .custom)
     var barButton:UIBarButtonItem!
-
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         commentBar.inputTextView.placeholder = "Add a comment..."
@@ -50,6 +50,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         
     }
+    
     @objc func keyboardWillBeHidden(note: Notification){
         commentBar.inputTextView.text = nil
         showsCommentBar = false
@@ -144,6 +145,13 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             let urlString = imageFile.url!
             let url = URL(string: urlString)!
             cell.postImage.af_setImage(withURL: url)
+            
+            let profile = user["profileImage"] as! PFFileObject
+            let profileUrl = profile.url!
+            let url2 = URL(string: profileUrl)!
+            cell.profilePicture.layer.cornerRadius=6.0
+            cell.profilePicture.af_setImage(withURL: url2)
+            cell.postID=post.objectId!
             
             return cell
             
