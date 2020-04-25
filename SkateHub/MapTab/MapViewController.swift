@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import Parse
 
-class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
 
     @IBOutlet weak var spotView: UIView!
     @IBOutlet weak var spotLabel: UITextView!
@@ -30,11 +30,13 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate=self
         mapView.mapType = .hybrid
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         menuBtn.layer.cornerRadius=6
         serviceCheck()
         updateSpots()
+        zoomLocation()
         submitBtn.layer.cornerRadius=6
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         self.view.layoutIfNeeded()
@@ -93,6 +95,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateSpots()
+        zoomLocation()
     }
     
     func createMarkers(){
@@ -100,7 +103,9 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             let marker=MKPointAnnotation()
             let lat=location["coordinates"] as! PFGeoPoint
             let convertedLat=CLLocationCoordinate2D(latitude: lat.latitude, longitude: lat.longitude)
+            let name=location["name"] as! String
             marker.coordinate=convertedLat
+            marker.title=name
             mapView.addAnnotation(marker)
         }
     }
@@ -117,22 +122,31 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     func checkAuthorization(){
         switch CLLocationManager.authorizationStatus() {
         case .authorizedWhenInUse:
+            self.mapView.showsUserLocation=true
+            self.mapView.setUserTrackingMode(.follow, animated: true)
+        case .denied:
+            return
+        case .notDetermined:
+            self.mapManager.requestWhenInUseAuthorization()
+            self.mapView.showsUserLocation=true
+            self.mapView.setUserTrackingMode(.follow, animated: true)
+        case .restricted:
+            return
+        case .authorizedAlways:
+            self.mapView.showsUserLocation=true
+            self.mapView.setUserTrackingMode(.follow, animated: true)
+        }
+    }
+    
+    func zoomLocation(){
+        let status=CLLocationManager.authorizationStatus()
+        if status == .authorizedAlways || status == .authorizedWhenInUse || status == .notDetermined {
             let lat=mapManager.location?.coordinate.latitude
             let long=mapManager.location?.coordinate.longitude
             let location = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
             let span=MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
             let region=MKCoordinateRegion(center: location, span: span)
             mapView.setRegion(region, animated: true)
-            mapView.showsUserLocation=true
-        case .denied:
-            break
-        case .notDetermined:
-            mapManager.requestWhenInUseAuthorization()
-            mapView.showsUserLocation=true
-        case .restricted:
-            break
-        case .authorizedAlways:
-            break
         }
     }
     
@@ -184,6 +198,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             mapView.removeAnnotation(prevMarker)
         }
     }
+    
     
     @IBAction func onSpot(_ sender: Any) {
         self.submitBtn.isEnabled=false
