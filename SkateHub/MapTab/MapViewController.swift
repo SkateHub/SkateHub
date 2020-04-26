@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import Parse
 
-class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var spotView: UIView!
     @IBOutlet weak var spotLabel: UITextView!
@@ -29,7 +29,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapView.delegate=self
         mapView.mapType = .hybrid
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         menuBtn.layer.cornerRadius=6
@@ -110,11 +109,15 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func serviceCheck(){
+        self.mapManager.requestAlwaysAuthorization()
+        self.mapManager.requestWhenInUseAuthorization()
         if(CLLocationManager.locationServicesEnabled()){
+            mapView.delegate=self
+            mapManager.desiredAccuracy=kCLLocationAccuracyBest
+            mapManager.startUpdatingLocation()
             checkAuthorization()
-            
             } else{
-            
+            print("No location")
         }
     }
     
@@ -138,12 +141,11 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     }
     
     func zoomLocation(){
-        let status=CLLocationManager.authorizationStatus()
-        if status == .authorizedAlways || status == .authorizedWhenInUse || status == .notDetermined {
+        if CLLocationManager.locationServicesEnabled(){
             let lat=mapManager.location?.coordinate.latitude
             let long=mapManager.location?.coordinate.longitude
             let location = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
-            let span=MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            let span=MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
             let region=MKCoordinateRegion(center: location, span: span)
             mapView.setRegion(region, animated: true)
         }
@@ -180,7 +182,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                 let marker=MKPointAnnotation()
                 marker.coordinate=cord
                 tapGes.isEnabled=false
-                let span=MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+                let span=MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
                 let region=MKCoordinateRegion(center: coordinates, span: span)
                 mapView.setRegion(region, animated: true)
                 if prevMarker != nil{
