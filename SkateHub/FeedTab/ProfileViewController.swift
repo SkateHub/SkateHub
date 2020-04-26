@@ -2,8 +2,7 @@
 //  ProfileViewController.swift
 //  SkateHub
 //
-//  Created by Paola Camacho on 4/2/20.
-//  Copyright © 2020 Jose Patino. All rights reserved.
+//  Copyright © 2020 Jose Patino/Aldo Almeida/Paola Camacho All rights reserved.
 //
 
 import UIKit
@@ -24,8 +23,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
         profileImage.layer.cornerRadius=profileImage.frame.height/2
         profileImage.clipsToBounds=true
-        profileImage.layer.borderColor=UIColor.systemPink.cgColor
-        profileImage.layer.borderWidth=2
         updateBtn.layer.cornerRadius=6
         logBtn.layer.cornerRadius=6
         deleteBtn.layer.cornerRadius=6

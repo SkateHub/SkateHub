@@ -2,8 +2,7 @@
 //  CameraViewController.swift
 //  SkateHub
 //
-//  Created by Paola Camacho on 4/8/20.
-//  Copyright © 2020 Jose Patino. All rights reserved.
+//  Copyright © 2020 Jose Patino/Aldo Almeida/Paola Camacho All rights reserved.
 //
 
 import UIKit
@@ -62,10 +61,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
-        let size = CGSize(width: 300, height: 300)
-        let scaledImage = image.af_imageAspectScaled(toFill: size)
+        //let size = CGSize(width: 300, height: 300)
+        //let scaledImage = image.af_imageAspectScaled(toFill: size)
         
-        imageView.image = scaledImage
+        imageView.image = image
         
         dismiss(animated: true, completion: nil)
         

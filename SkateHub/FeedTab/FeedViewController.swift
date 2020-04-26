@@ -2,8 +2,7 @@
 //  FeedTableViewController.swift
 //  SkateHub
 //
-//  Created by Paola Camacho on 4/3/20.
-//  Copyright © 2020 Jose Patino. All rights reserved.
+//  Copyright © 2020 Jose Patino/Aldo Almeida/Paola Camacho. All rights reserved.
 //
 
 import UIKit
@@ -42,7 +41,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         profileBtn.imageView?.contentMode = .scaleAspectFill
         profileBtn.clipsToBounds=true
         profileBtn.widthAnchor.constraint(equalToConstant: 40).isActive=true
+        profileBtn.heightAnchor.constraint(equalToConstant: 40).isActive=true
         let image=getImage()
+        profileBtn.layer.cornerRadius=20
         profileBtn.af_setImage(for: .normal, url: image)
         barButton=UIBarButtonItem(customView: profileBtn)
         self.navigationItem.setRightBarButton(barButton, animated: true)
@@ -138,6 +139,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell") as! PostCell
             
             let user = post["author"] as! PFUser
+            cell.contentView.layer.cornerRadius=25
+            cell.contentView.layer.borderColor=UIColor.lightGray.cgColor
+            cell.contentView.layer.borderWidth=0.85
             cell.usernameLabel.text = user.username
             cell.captionLabel.text = post["caption"] as! String
             
@@ -149,7 +153,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             let profile = user["profileImage"] as! PFFileObject
             let profileUrl = profile.url!
             let url2 = URL(string: profileUrl)!
-            cell.profilePicture.layer.cornerRadius=6.0
+            cell.profilePicture.layer.cornerRadius=20.0
+            //cell.profilePicture.layer.borderWidth=1.0
+            //cell.profilePicture.layer.borderColor=UIColor.black.cgColor
             cell.profilePicture.af_setImage(withURL: url2)
             cell.postID=post.objectId!
             

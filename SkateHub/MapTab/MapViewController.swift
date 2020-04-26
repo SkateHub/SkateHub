@@ -2,8 +2,7 @@
 //  MapViewController.swift
 //  SkateHub
 //
-//  Created by Aldo Almeida on 4/8/20.
-//  Copyright © 2020 Jose Patino. All rights reserved.
+//  Copyright © 2020 Jose Patino/Aldo Almeida/Paola Camacho All rights reserved.
 //
 
 import UIKit

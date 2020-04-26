@@ -2,8 +2,7 @@
 //  PostCell.swift
 //  SkateHub
 //
-//  Created by Paola Camacho on 4/3/20.
-//  Copyright © 2020 Jose Patino. All rights reserved.
+//  Copyright © 2020 Jose Patino/Aldo Almeida/Paola Camacho All rights reserved.
 //
 
 import UIKit
@@ -20,7 +19,7 @@ class PostCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        loadPost()
+       // loadPost()
         
     }
     
@@ -45,16 +44,17 @@ class PostCell: UITableViewCell {
     }
 
     @IBAction func onLike(_ sender: Any) {
-        likedPosts.append(postID)
-        print(likedPosts)
-        let user=PFUser.current()!
-        user["likedPosts"]=likedPosts
-        user.saveInBackground(block: { (success,errror) in
-            if success{
-                print("SAVED")
-            } else{
-                print("ERRPR")
-            }
-        })
+//        likedPosts.append(postID)
+//        print(likedPosts)
+//        let user=PFUser.current()!
+//        user["likedPosts"]=likedPosts
+//        user.saveInBackground(block: { (success,error) in
+//            if success{
+//                print("SAVED")
+//            } else{
+//                print("ERROR")
+//            }
+//        })
+        print("yup")
     }
 }

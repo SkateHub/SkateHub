@@ -2,8 +2,7 @@
 //  logInViewController.swift
 //  SkateHub
 //
-//  Created by Jose Patino on 3/5/20.
-//  Copyright © 2020 Jose Patino. All rights reserved.
+//  Copyright © 2020 Jose Patino/Aldo Almeida/Paola Camacho All rights reserved.
 //
 
 import UIKit

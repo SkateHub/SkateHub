@@ -2,8 +2,7 @@
 //  PostGridCell.swift
 //  SkateHub
 //
-//  Created by Jose Patino on 4/11/20.
-//  Copyright © 2020 Jose Patino. All rights reserved.
+//  Copyright © 2020 Jose Patino/Aldo Almeida/Paola Camacho All rights reserved.
 //
 
 import UIKit
