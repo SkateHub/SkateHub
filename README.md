@@ -194,3 +194,5 @@ Allows other skaters to socialize and share their progress.
 <img src=http://g.recordit.co/vNQ3ORYP1V.gif width=450><br>
 ## Demo of third sprint
 <img src=http://g.recordit.co/igdS6d3bnB.gif width=450><br>
+## Demo of fourth sprint
+<img src=http://g.recordit.co/MblmJtUKz6.gif width=450><br>
