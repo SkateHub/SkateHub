@@ -26,6 +26,7 @@
 		8D92D70F2436A4C600500DAC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D92D70E2436A4C600500DAC /* ProfileViewController.swift */; };
 		8DB94DDE244BD8EC004AECCC /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB94DDD244BD8EC004AECCC /* CommentCell.swift */; };
 		8DD534F72437E73400BDA4CB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD534F62437E73400BDA4CB /* PostCell.swift */; };
+		8DD7969F2457984200B90930 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD7969E2457984200B90930 /* CoreLocation.framework */; };
 		D67440257DCAF18DC643DA2D /* Pods_SkateHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		8D92D70E2436A4C600500DAC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8DB94DDD244BD8EC004AECCC /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		8DD534F62437E73400BDA4CB /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		8DD7969E2457984200B90930 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD7969F2457984200B90930 /* CoreLocation.framework in Frameworks */,
 				3784EA65244113860013E099 /* MapKit.framework in Frameworks */,
 				D67440257DCAF18DC643DA2D /* Pods_SkateHub.framework in Frameworks */,
 			);
@@ -72,6 +75,7 @@
 		0B9441268DD11F7D47344528 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DD7969E2457984200B90930 /* CoreLocation.framework */,
 				3784EA64244113860013E099 /* MapKit.framework */,
 				37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */,
 			);

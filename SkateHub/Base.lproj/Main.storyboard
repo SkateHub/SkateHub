@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -377,6 +377,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="CuB-p1-Gjf"/>
                     <connections>
+                        <outlet property="addSpotBtn" destination="twq-AM-evp" id="zQ2-iS-GdV"/>
                         <outlet property="editBtn" destination="7vC-Cm-b41" id="se0-FN-0wX"/>
                         <outlet property="mapView" destination="nNv-pK-nsb" id="WYP-Y9-rwm"/>
                         <outlet property="menuBtn" destination="TXs-2M-Mmk" id="Pnd-kd-ToO"/>
@@ -740,14 +741,14 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddCommentCell" id="tIm-fL-4NI">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="37"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="37.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tIm-fL-4NI" id="aRe-Vj-x4n">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vc-as-mJG">
-                                                    <rect key="frame" x="31" y="8" width="375" height="21"/>
+                                                    <rect key="frame" x="31" y="8" width="375" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -762,7 +763,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="467" id="0Wj-He-ZCv" customClass="PostCell" customModule="SkateHub" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="65" width="414" height="467"/>
+                                        <rect key="frame" x="0.0" y="65.5" width="414" height="467"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Wj-He-ZCv" id="KLj-tO-C2h">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="467"/>
@@ -833,7 +834,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CommentCell" id="rsi-fx-qv8" customClass="CommentCell" customModule="SkateHub" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="532" width="414" height="37"/>
+                                        <rect key="frame" x="0.0" y="532.5" width="414" height="37"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rsi-fx-qv8" id="UMu-C2-b3b">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>

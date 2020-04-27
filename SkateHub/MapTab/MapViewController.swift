@@ -8,6 +8,7 @@
 import UIKit
 import MapKit
 import Parse
+import CoreLocation
 
 class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 
@@ -16,7 +17,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBOutlet weak var spotImage: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var submitBtn: UIButton!
-    let mapManager=CLLocationManager()
+    var mapManager=CLLocationManager()
     var prevMarker:MKPointAnnotation!
     var coordinates:CLLocationCoordinate2D!
     var spots=[PFObject]()
@@ -24,6 +25,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var height:CGFloat!
     var editEnabled=false
     @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var addSpotBtn: UILabel!
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet var tapGes: UITapGestureRecognizer!
     
@@ -32,13 +34,29 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         mapView.mapType = .hybrid
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         menuBtn.layer.cornerRadius=6
-        serviceCheck()
+        self.mapManager.requestAlwaysAuthorization()
+        self.mapManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            mapManager.delegate=self
+            mapManager.desiredAccuracy=kCLLocationAccuracyBest
+            mapView.setUserTrackingMode(.follow, animated: true)
+            mapManager.startUpdatingLocation()
+        }
         updateSpots()
-        zoomLocation()
+        addSpotBtn.layer.cornerRadius=12
         submitBtn.layer.cornerRadius=6
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         self.view.layoutIfNeeded()
         // Do any additional setup after loading the view.
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.mapView.showsUserLocation=true
+        let location=locations.last! as CLLocation
+        let center=CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let span=MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
+        let region=MKCoordinateRegion(center: center, span: span)
+        mapView.setRegion(region, animated: true)
     }
     
     @objc func keyboardWillShow(_ notification: Notification){
@@ -93,7 +111,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateSpots()
-        zoomLocation()
     }
     
     func createMarkers(){
@@ -108,48 +125,6 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
         }
     }
     
-    func serviceCheck(){
-        self.mapManager.requestAlwaysAuthorization()
-        self.mapManager.requestWhenInUseAuthorization()
-        if(CLLocationManager.locationServicesEnabled()){
-            mapView.delegate=self
-            mapManager.desiredAccuracy=kCLLocationAccuracyBest
-            mapManager.startUpdatingLocation()
-            checkAuthorization()
-            } else{
-            print("No location")
-        }
-    }
-    
-    func checkAuthorization(){
-        switch CLLocationManager.authorizationStatus() {
-        case .authorizedWhenInUse:
-            self.mapView.showsUserLocation=true
-            self.mapView.setUserTrackingMode(.follow, animated: true)
-        case .denied:
-            return
-        case .notDetermined:
-            self.mapManager.requestWhenInUseAuthorization()
-            self.mapView.showsUserLocation=true
-            self.mapView.setUserTrackingMode(.follow, animated: true)
-        case .restricted:
-            return
-        case .authorizedAlways:
-            self.mapView.showsUserLocation=true
-            self.mapView.setUserTrackingMode(.follow, animated: true)
-        }
-    }
-    
-    func zoomLocation(){
-        if CLLocationManager.locationServicesEnabled(){
-            let lat=mapManager.location?.coordinate.latitude
-            let long=mapManager.location?.coordinate.longitude
-            let location = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
-            let span=MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
-            let region=MKCoordinateRegion(center: location, span: span)
-            mapView.setRegion(region, animated: true)
-        }
-    }
     
     @IBAction func onImagePicker(_ sender: Any) {
         let picker = UIImagePickerController()
