@@ -24,8 +24,9 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     var menuOn=true
     var height:CGFloat!
     var editEnabled=false
+    var check=false
     @IBOutlet weak var editBtn: UIButton!
-    @IBOutlet weak var addSpotBtn: UILabel!
+    @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var menuBtn: UIButton!
     @IBOutlet var tapGes: UITapGestureRecognizer!
     
@@ -43,7 +44,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
             mapManager.startUpdatingLocation()
         }
         updateSpots()
-        addSpotBtn.layer.cornerRadius=12
+        addBtn.layer.cornerRadius=6
         submitBtn.layer.cornerRadius=6
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         self.view.layoutIfNeeded()
@@ -52,11 +53,15 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.mapView.showsUserLocation=true
-        let location=locations.last! as CLLocation
-        let center=CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-        let span=MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
-        let region=MKCoordinateRegion(center: center, span: span)
-        mapView.setRegion(region, animated: true)
+        if !check{
+            let location=locations.last! as CLLocation
+            let center=CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let span=MKCoordinateSpan(latitudeDelta: 0.003, longitudeDelta: 0.003)
+            let region=MKCoordinateRegion(center: center, span: span)
+            mapView.setRegion(region, animated: true)
+            check=true
+        }
+        
     }
     
     @objc func keyboardWillShow(_ notification: Notification){
@@ -111,6 +116,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateSpots()
+        check=false
     }
     
     func createMarkers(){
