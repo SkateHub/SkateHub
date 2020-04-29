@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -212,6 +212,77 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FSe-aq-LkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1496" y="65"/>
+        </scene>
+        <!--Custom Camera View Controller-->
+        <scene sceneID="gWs-oI-cR0">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="F7e-5D-YhV" customClass="CustomCameraViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q7s-lz-8yr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGM-cW-Sfu">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cbs-H8-WbT">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQi-Ef-N2d">
+                                        <rect key="frame" x="154" y="755" width="107" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99918574090000001" green="0.72703236339999999" blue="0.6313442588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="stop.circle" catalog="system"/>
+                                        <connections>
+                                            <action selector="onCapture:" destination="F7e-5D-YhV" eventType="touchUpInside" id="Hqe-Ih-zjp"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Px2-LU-XkB">
+                                        <rect key="frame" x="269" y="772" width="43" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99918574090000001" green="0.72703236339999999" blue="0.6313442588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="gobackward" catalog="system"/>
+                                        <connections>
+                                            <action selector="tryAgain:" destination="F7e-5D-YhV" eventType="touchUpInside" id="oRu-yu-crO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rf-6l-kiE">
+                                        <rect key="frame" x="103" y="778" width="43" height="53"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99918574090000001" green="0.72703236339999999" blue="0.6313442588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="photo.fill.on.rectangle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="grabPhoto:" destination="F7e-5D-YhV" eventType="touchUpInside" id="VkQ-Q0-LZQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf6-kU-xgO">
+                                        <rect key="frame" x="8" y="53" width="49" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.99923068280000005" green="0.74652159210000002" blue="0.65879809860000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" backgroundImage="arrow.left.square.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="onExit:" destination="F7e-5D-YhV" eventType="touchUpInside" id="SJe-Xj-lHW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9xc-RS-RYC"/>
+                    </view>
+                    <connections>
+                        <outlet property="backBtn" destination="Px2-LU-XkB" id="DeV-sZ-E0w"/>
+                        <outlet property="captureImageView" destination="Cbs-H8-WbT" id="s6U-DL-8EF"/>
+                        <outlet property="previewView" destination="wGM-cW-Sfu" id="hZm-lb-rOu"/>
+                        <outlet property="takePicBtn" destination="oQi-Ef-N2d" id="aVC-kk-eEt"/>
+                        <segue destination="tnI-P0-jo4" kind="showDetail" identifier="sendIt" id="SvA-BG-jMQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sR-sb-Qav" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28.985507246376812" y="3075.6696428571427"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="f60-iy-tZi">
@@ -646,12 +717,12 @@
         <!--Camera View Controller-->
         <scene sceneID="3oF-d7-7R9">
             <objects>
-                <viewController id="tnI-P0-jo4" customClass="CameraViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="tnI-P0-jo4" customClass="CameraViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="prs-Ux-WnV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0j9-RH-erD">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0j9-RH-erD">
                                 <rect key="frame" x="56" y="105" width="302" height="338"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -883,7 +954,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="insta_camera_btn" id="M85-Fn-OJy">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="tnI-P0-jo4" kind="presentation" id="CnZ-b4-h4N"/>
+                                <segue destination="F7e-5D-YhV" kind="presentation" id="aYb-eP-IZS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -946,13 +1017,17 @@
     <resources>
         <image name="arrow.down" catalog="system" width="120" height="128"/>
         <image name="arrow.left.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="arrow.left.square.fill" catalog="system" width="128" height="114"/>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
         <image name="doc.plaintext" catalog="system" width="115" height="128"/>
         <image name="favor-icon" width="30" height="30"/>
+        <image name="gobackward" catalog="system" width="121" height="128"/>
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="photo.fill.on.rectangle.fill" catalog="system" width="128" height="98"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="profile_tab" width="25" height="25"/>
+        <image name="stop.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>

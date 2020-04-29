@@ -27,6 +27,7 @@
 		8DB94DDE244BD8EC004AECCC /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB94DDD244BD8EC004AECCC /* CommentCell.swift */; };
 		8DD534F72437E73400BDA4CB /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD534F62437E73400BDA4CB /* PostCell.swift */; };
 		8DD7969F2457984200B90930 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DD7969E2457984200B90930 /* CoreLocation.framework */; };
+		8DFBFF7C245A3526000EA266 /* CustomCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFBFF7B245A3526000EA266 /* CustomCameraViewController.swift */; };
 		D67440257DCAF18DC643DA2D /* Pods_SkateHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37D6C413919D9D2315BDD756 /* Pods_SkateHub.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		8DB94DDD244BD8EC004AECCC /* CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
 		8DD534F62437E73400BDA4CB /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		8DD7969E2457984200B90930 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8DFBFF7B245A3526000EA266 /* CustomCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCameraViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				8DD534F62437E73400BDA4CB /* PostCell.swift */,
 				8D80B7F2243ECA87001BF1C9 /* CameraViewController.swift */,
 				8D4FF60C243FF95600C9D0D4 /* FeedViewController.swift */,
+				8DFBFF7B245A3526000EA266 /* CustomCameraViewController.swift */,
 				8DB94DDD244BD8EC004AECCC /* CommentCell.swift */,
 			);
 			path = FeedTab;
@@ -278,6 +281,7 @@
 				8DD534F72437E73400BDA4CB /* PostCell.swift in Sources */,
 				8D80B7F3243ECA87001BF1C9 /* CameraViewController.swift in Sources */,
 				3A307F1E24422C0E00EA2E70 /* PostGridCell.swift in Sources */,
+				8DFBFF7C245A3526000EA266 /* CustomCameraViewController.swift in Sources */,
 				8D92D70F2436A4C600500DAC /* ProfileViewController.swift in Sources */,
 				3A7167E024115C7200B7A304 /* AppDelegate.swift in Sources */,
 				37284DF2243E584500B4F225 /* MapViewController.swift in Sources */,

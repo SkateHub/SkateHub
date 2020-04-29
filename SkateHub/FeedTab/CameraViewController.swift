@@ -13,9 +13,11 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var captionLabel: UILabel!
     @IBOutlet weak var captionField: UITextView!
     @IBOutlet weak var postBtn: UIButton!
+    var retrievePhoto:UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageView.image=retrievePhoto
     }
     
     @IBAction func onPostButton(_ sender: Any) {
@@ -34,7 +36,10 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
             if success{
                 self.postBtn.isEnabled=true
                 print("Saved!")
-                self.dismiss(animated: true, completion: nil)
+                let main=UIStoryboard(name: "Main", bundle: nil)
+                let login=main.instantiateViewController(withIdentifier: "FeedNavigationController")
+                let scene=self.view.window?.windowScene?.delegate  as! SceneDelegate
+                scene.window?.rootViewController=login
             }else{
                 self.postBtn.isEnabled=true
                 print("Error!")
