@@ -15,6 +15,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     var likedPosts = [String]()
     var postID:String!
+    var user:PFObject!
     @IBOutlet weak var likeBttn: UIButton!
     
     override func awakeFromNib() {
@@ -22,6 +23,9 @@ class PostCell: UITableViewCell {
         // Initialization code
        // loadPost()
         //likeBttn.setTitle("🤙", for: .normal)
+        postImage.layer.cornerRadius=6
+        postImage.layer.borderColor=UIColor.black.cgColor
+        postImage.layer.borderWidth=1
         
     }
     

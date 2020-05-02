@@ -115,7 +115,9 @@ class CustomCameraViewController: UIViewController, AVCapturePhotoCaptureDelegat
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let image = info[.editedImage] as! UIImage
         sendPhoto=image
-        self.performSegue(withIdentifier: "sendIt", sender: nil)
+        self.dismiss(animated: true) {
+            self.performSegue(withIdentifier: "sendIt", sender: nil)
+        }
     }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

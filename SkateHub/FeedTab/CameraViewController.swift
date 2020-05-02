@@ -18,6 +18,9 @@ class CameraViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image=retrievePhoto
+        imageView.layer.cornerRadius=6
+        imageView.layer.borderColor=UIColor.black.cgColor
+        imageView.layer.borderWidth=1
     }
     
     @IBAction func onPostButton(_ sender: Any) {
