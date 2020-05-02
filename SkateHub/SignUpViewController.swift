@@ -31,6 +31,7 @@ class SignUpViewController: UIViewController
         let profileData=#imageLiteral(resourceName: "default-profile").pngData()
         let imageFile=PFFileObject(name: "profileImage.png", data: profileData!)
         user["profileImage"]=imageFile
+        user["likedPosts"]=[]
         user["bio"]="Welcome to my profile!"
         user.username = usernameField.text
         user.password = passwordField.text

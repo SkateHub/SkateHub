@@ -52,6 +52,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    
     @objc func keyboardWillBeHidden(note: Notification){
         commentBar.inputTextView.text = nil
         showsCommentBar = false
@@ -79,6 +80,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool){
         super.viewDidAppear(animated)
+        let image=getImage()
+        profileBtn.af_setImage(for: .normal, url: image)
         
         let query = PFQuery(className: "Posts")
         query.includeKeys(["author", "comments", "comments.author"])

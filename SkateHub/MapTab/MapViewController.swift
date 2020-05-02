@@ -201,6 +201,7 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                 if success{
                     print("spot saved")
                     self.submitBtn.isEnabled=true
+                    self.updateSpots()
                 } else{
                     print("Error with spot!")
                 }

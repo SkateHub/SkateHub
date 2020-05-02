@@ -15,11 +15,13 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var captionLabel: UILabel!
     var likedPosts = [String]()
     var postID:String!
+    @IBOutlet weak var likeBttn: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
        // loadPost()
+        //likeBttn.setTitle("🤙", for: .normal)
         
     }
     
