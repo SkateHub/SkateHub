@@ -48,7 +48,6 @@ class PostCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
     @IBAction func onLike(_ sender: Any) {
 //        likedPosts.append(postID)
 //        print(likedPosts)

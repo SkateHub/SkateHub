@@ -9,9 +9,11 @@
 import UIKit
 
 class CheckProfileViewController: UIViewController {
+    var username:String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
