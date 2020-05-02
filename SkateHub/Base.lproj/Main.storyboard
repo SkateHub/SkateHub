@@ -337,29 +337,6 @@
             </objects>
             <point key="canvasLocation" x="1109" y="790"/>
         </scene>
-        <!--Spot View Controller-->
-        <scene sceneID="h00-7Z-bdr">
-            <objects>
-                <viewController id="912-ed-6Tc" customClass="SpotViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LwS-dm-OKm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WHh-2h-Nfn" customClass="addSpotView" customModule="SkateHub" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="OI9-Qx-2Vc"/>
-                    </view>
-                    <size key="freeformSize" width="414" height="300"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bie-CY-Ice" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-488.40579710144931" y="2261.3839285714284"/>
-        </scene>
         <!--Map View Controller-->
         <scene sceneID="ADo-NZ-CMS">
             <objects>
@@ -637,6 +614,22 @@
             </objects>
             <point key="canvasLocation" x="1886.9565217391305" y="2265.4017857142858"/>
         </scene>
+        <!--Check Profile View Controller-->
+        <scene sceneID="ifv-gc-Ux3">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="c3X-t5-gZw" customClass="CheckProfileViewController" customModule="SkateHub" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="K2b-d8-dCv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LAc-YN-efk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fyP-Fs-MFW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zDh-xR-bt5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986" y="3040"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="hjl-cG-74A">
             <objects>
@@ -780,7 +773,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ONE-QO-Y4m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1496" y="2997"/>
+            <point key="canvasLocation" x="1109" y="3040"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="3oF-d7-7R9">
@@ -867,7 +860,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="788" y="2997"/>
+            <point key="canvasLocation" x="-29" y="3774"/>
         </scene>
         <!--Spots-->
         <scene sceneID="tXa-qi-u3d">
@@ -1051,6 +1044,7 @@
                     <connections>
                         <outlet property="tableView" destination="OId-X9-kdt" id="hhf-Ff-ZWi"/>
                         <segue destination="nWF-ko-rei" kind="show" identifier="editProfile" id="8gE-vY-0D3"/>
+                        <segue destination="c3X-t5-gZw" kind="show" identifier="viewUser" id="hZG-cV-C7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="833-BB-GAK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

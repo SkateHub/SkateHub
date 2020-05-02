@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import Parse
 import CoreLocation
+import AlamofireImage
 
 class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
 
