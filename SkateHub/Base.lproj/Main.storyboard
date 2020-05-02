@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -920,7 +920,7 @@
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="onLike:" destination="0Wj-He-ZCv" eventType="touchUpInside" id="P8T-Qo-bnW"/>
+                                                        <action selector="onLike:" destination="kTx-9h-hCX" eventType="touchUpInside" id="bkO-Za-lVz"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -943,7 +943,6 @@
                                         <connections>
                                             <outlet property="captionLabel" destination="FqX-xd-Jmm" id="ope-kF-3zP"/>
                                             <outlet property="likeBtn" destination="7sd-F5-nx8" id="Qrg-lY-MZs"/>
-                                            <outlet property="likeBttn" destination="7sd-F5-nx8" id="uDf-D5-bQH"/>
                                             <outlet property="postImage" destination="3oP-M6-MUG" id="7nh-8l-cta"/>
                                             <outlet property="profilePicture" destination="s1H-p6-b2Y" id="R7D-5N-Idf"/>
                                             <outlet property="usernameLabel" destination="Mj1-fe-5WU" id="Aom-6w-ttE"/>
@@ -985,14 +984,14 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddCommentCell" id="tIm-fL-4NI">
-                                        <rect key="frame" x="0.0" y="532" width="414" height="37"/>
+                                        <rect key="frame" x="0.0" y="532" width="414" height="37.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tIm-fL-4NI" id="aRe-Vj-x4n">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a comment..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vc-as-mJG">
-                                                    <rect key="frame" x="31" y="8" width="375" height="21"/>
+                                                    <rect key="frame" x="31" y="8" width="375" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>

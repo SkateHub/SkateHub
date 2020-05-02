@@ -17,6 +17,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var posts = [PFObject]()
     var selectedPost: PFObject!
+    var likedPosts = [String]()
+    var user:String!
+    var currentHeart:UIButton!
     
     let profileBtn=UIButton(type: .custom)
     var barButton:UIBarButtonItem!
@@ -51,8 +54,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         myRefreshControl.addTarget(self, action: #selector(viewDidAppear(_:)), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
-
-
+        
+        
         
     }
     
@@ -67,6 +70,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     override var canBecomeFirstResponder: Bool{
         return showsCommentBar
+    }
+    
+    func loadPost(){
+        if let user=PFUser.current(){
+            do {
+                try user.fetch()
+                let posts=user["likedPosts"] as! Array<String>
+                likedPosts=posts
+            } catch  {
+                print("ERROR")
+            }
+        }
+        print(likedPosts,"\n SIZE IS \(likedPosts.count)")
     }
     
     
@@ -102,6 +118,17 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
         }
+        
+        if let user=PFUser.current(){
+            do {
+                try user.fetch()
+                let posts=user["likedPosts"] as! Array<String>
+                likedPosts=posts
+            } catch  {
+                print("ERROR")
+            }
+        }
+        print(likedPosts,"\n SIZE IS \(likedPosts.count)")
         
     }
     func messageInputBar(_ inputBar: MessageInputBar, didPressSendButtonWith text: String) {
@@ -167,6 +194,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             //cell.profilePicture.layer.borderColor=UIColor.black.cgColor
             cell.profilePicture.af_setImage(withURL: url2)
             cell.postID=post.objectId!
+            if likedPosts.contains(cell.postID){
+                cell.likeBtn.setImage(UIImage(named: "favor-icon-red"), for: UIControl.State.normal)
+            }else{
+                cell.likeBtn.setImage(UIImage(named: "favor-icon"), for: UIControl.State.normal)
+                
+            }
             
             return cell
             
@@ -201,9 +234,28 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             selectedPost = post
         }
+        let cell=tableView.cellForRow(at: indexPath) as! PostCell
+        user=cell.postID as String
+        currentHeart=cell.likeBtn as UIButton
     }
     
     
+    
+    
+    @IBAction func onLike(_ sender: Any) {
+        likedPosts.append(user)
+        print(likedPosts)
+        let user=PFUser.current()!
+        user["likedPosts"]=likedPosts
+        user.saveInBackground(block: { (success,error) in
+            if success{
+                print("SAVED")
+                self.currentHeart.setImage(UIImage(named: "favor-icon-red"), for: UIControl.State.normal)
+            } else{
+                print("ERROR")
+            }
+        })
+    }
     
     
     
