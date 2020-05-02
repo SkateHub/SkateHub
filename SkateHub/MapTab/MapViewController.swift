@@ -202,6 +202,10 @@ class MapViewController: UIViewController, UIImagePickerControllerDelegate, UINa
                     print("spot saved")
                     self.submitBtn.isEnabled=true
                     self.updateSpots()
+                    self.spotView.isHidden=true
+                    self.onEdit(false)
+                    self.tapGes.isEnabled=true
+                    
                 } else{
                     print("Error with spot!")
                 }
