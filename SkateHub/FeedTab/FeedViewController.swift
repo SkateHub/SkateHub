@@ -20,6 +20,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let profileBtn=UIButton(type: .custom)
     var barButton:UIBarButtonItem!
+    let myRefreshControl = UIRefreshControl()
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -47,6 +48,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         profileBtn.af_setImage(for: .normal, url: image)
         barButton=UIBarButtonItem(customView: profileBtn)
         self.navigationItem.setRightBarButton(barButton, animated: true)
+        
+        myRefreshControl.addTarget(self, action: #selector(viewDidAppear(_:)), for: .valueChanged)
+        tableView.refreshControl = myRefreshControl
 
 
         
@@ -84,6 +88,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         profileBtn.af_setImage(for: .normal, url: image)
         
         let query = PFQuery(className: "Posts")
+        query.order(byDescending: "createdAt")
         query.includeKeys(["author", "comments", "comments.author"])
         query.limit = 20
         
@@ -91,6 +96,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
             if posts != nil{
                 self.posts = posts!
                 self.tableView.reloadData()
+                self.myRefreshControl.endRefreshing()
             }else{
                 print("Could not get posts")
             }
