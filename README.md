@@ -1,5 +1,5 @@
 
-# Product Spec Design: SkateHub
+# Product Spec Design: SkateHub (Product in build phase, code not displayed for privacy)
 ## Overview
 ### Description
 Allows other skaters to socialize and share their progress.
