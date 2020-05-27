@@ -8,6 +8,5 @@ target 'SkateHub' do
   # Pods for SkateHub
 	pod "Parse"
 	pod "AlamofireImage"
-	pod "MessageInputBar"
 
 end
